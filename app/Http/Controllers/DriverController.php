@@ -50,10 +50,10 @@ class DriverController extends Controller
     public function store(Request $request)
     {
         Driver::create([
-            'user' => \Auth::id(),
+            'user_id' => \Auth::id(),
             'name' => $request->name,
-            'object' => $request->object,
-            'gos_number' => $request->gos_number,
+            'passport_number' => $request->passport,
+            'position' => $request->position,
         ]);
 
         return redirect()->route('drivers.index')->with('success', 'Перевозчик успешно добавлен!');
