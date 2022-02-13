@@ -16,12 +16,12 @@ class CreateDriversTable extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user');
-            $table->foreign('user')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->string('name');
-            $table->string('object_type')->default('plane');
-            $table->string('gos_number')->nullable();
+            $table->string('passport_number');
+            $table->string('position')->default('driver');
 
             $table->timestamps();
         });

@@ -29,16 +29,13 @@
                             </div>
 
                             <div class="form-group mb-1">
-                                <label for="">Тип транспорта</label>
-                                <select class="form-control mt-1" name="object" id="objectType">
-                                    <option value="bus">Автобус</option>
-                                    <option value="plane">Самолёт</option>
-                                </select>
+                                <label for="">Серия и номер паспорта</label>
+                                <input type="text" name="passport" class="form-control mt-1">
                             </div>
 
-                            <div class="form-group mb-1" id="gosNumber">
-                                <label for="">Гос. номер</label>
-                                <input type="text" name="gos_number" class="form-control mt-1">
+                            <div class="form-group mb-1">
+                                <label for="">Должность</label>
+                                <input type="text" name="position" class="form-control mt-1">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Создать</button>
