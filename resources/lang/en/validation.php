@@ -144,6 +144,7 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+//            'The email field is required.'=>
         ],
     ],
 

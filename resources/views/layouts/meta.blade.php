@@ -63,7 +63,9 @@
                     height: 14
                 });
             }
-        })
+
+            $('body').removeClass('menu-collapsed');
+        });
     </script>
 </body>
 </html>
