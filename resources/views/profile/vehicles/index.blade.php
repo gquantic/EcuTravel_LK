@@ -50,25 +50,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($drivers as $driver)
+                                @foreach($vehicles as $vehicle)
                                     <tr class="odd">
                                         <td>
-                                            {{ $driver->id }}
+{{--                                            {{ $vehicle->id }}--}}
                                         </td>
                                         <td>
-                                            {{ $driver->object_type }}
+{{--                                            {{ $vehicles->object_type }}--}}
                                         </td>
                                         <td>
-                                            {{ $driver->name }}
+{{--                                            {{ $vehicle->name }}--}}
                                         </td>
                                         <td>
-                                            {{ $driver->gos_number }}
+{{--                                            {{ $vehicles->gos_number }}--}}
                                         </td>
                                         <td>
-                                            {{ $driver->created_at }}
+{{--                                            {{ $vehicle->created_at }}--}}
                                         </td>
                                         <td>
-                                            {{ $driver->name }}
+{{--                                            {{ $vehicle->name }}--}}
                                         </td>
                                     </tr>
                                 @endforeach

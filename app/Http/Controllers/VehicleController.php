@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Driver;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 /**
  * @property array $pageData
  */
-class DriverController extends Controller
+
+class VehicleController extends Controller
 {
     public function __construct()
     {
@@ -24,10 +25,10 @@ class DriverController extends Controller
      */
     public function index()
     {
-        return view('profile.drivers.index', [
-            'pageData' => $this->pageData,
-            'drivers' => Driver::all(),
-        ]);
+
+        $vehicles = Vehicle::all();
+
+        return view('profile.vehicles.index',['pageData' => $this->pageData,],  compact('vehicles'));
 
     }
 
@@ -38,34 +39,28 @@ class DriverController extends Controller
      */
     public function create()
     {
-        return view('profile.drivers.create', ['pageData' => $this->pageData]);
+        return view('profile.vehicles.create', ['pageData' => $this->pageData]);
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        Driver::create([
-            'user' => \Auth::id(),
-            'name' => $request->name,
-            'object' => $request->object,
-            'gos_number' => $request->gos_number,
-        ]);
-
-        return redirect()->route('drivers.index')->with('success', 'Перевозчик успешно добавлен!');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(Driver $driver)
+    public function show(Vehicle $vehicle)
     {
         //
     }
@@ -73,22 +68,24 @@ class DriverController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Driver  $driver
-     * @return \Illuminate\Http\Response
+     * @param  \App\Models\Vehicle  $vehicle
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit(Driver $driver)
+    public function edit(Vehicle $vehicle)
     {
-        //
+        
+        return view('profile.vehicles.edit',compact('vehicle'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Driver $driver)
+    public function update(Request $request, Vehicle $vehicle)
     {
         //
     }
@@ -96,10 +93,10 @@ class DriverController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Driver $driver)
+    public function destroy(Vehicle $vehicle)
     {
         //
     }
