@@ -25,10 +25,12 @@ class VehicleController extends Controller
      */
     public function index()
     {
-
         $vehicles = Vehicle::all();
 
-        return view('profile.vehicles.index',['pageData' => $this->pageData,],  compact('vehicles'));
+        return view('profile.vehicles.index', [
+            'pageData' => $this->pageData,
+            'vehicles' => $vehicles
+        ]);
 
     }
 
@@ -51,18 +53,13 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate([
-           'type_ts'=>'required',
-           'gus_number_vehicle'=>'required',
-           'user_id'=>\Auth::id()
-       ]);
-       $vehicle = new Vehicle([
-           'type_ts'=> $request->type_ts,
-           'gus_number_vehicles'=> $request->gus_number_vehicles,
-//           'user_id'=> $request->get('user_id')
-       ]);
-        $vehicle->save();
-        return redirect('profile.vehicle.index')->with('success', 'Транспорт успешно добавлен !');
+        Vehicle::create([
+            'user_id'=> \Auth::id(),
+            'type_ts'=> $request->type_ts,
+            'gus_number_vehicle'=> $request->gus_number_vehicle,
+        ]);
+
+        return redirect()->route('vehicle.index');
     }
 
     /**

@@ -34,15 +34,11 @@
                                     <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px;" aria-sort="descending" aria-label="#: activate to sort column ascending">
                                         #
                                     </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 42px;" aria-label=": activate to sort column ascending">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 270px;" aria-label="Client: activate to sort column ascending">
-                                        Тип ТС
+                                    <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px;" aria-sort="descending" aria-label="#: activate to sort column ascending">
+                                        Транспорт
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 73px;" aria-label="Total: activate to sort column ascending">
                                         Гос.номер
-                                    </th>
-                                    <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 130px;" aria-label="Issued Date: activate to sort column ascending">
-                                        Компания
                                     </th>
                                 </tr>
                                 </thead>
@@ -53,19 +49,10 @@
                                             {{ $vehicle->id }}
                                         </td>
                                         <td>
-                                            {{ $vehicles->type_ts }}
+                                            {{ $vehicle->type_ts }}
                                         </td>
                                         <td>
                                             {{ $vehicle->gus_number_vehicle }}
-                                        </td>
-                                        <td>
-                                            {{ $vehicles->user_id }}
-                                        </td>
-                                        <td>
-{{--                                            {{ $vehicle->created_at }}--}}
-                                        </td>
-                                        <td>
-{{--                                            {{ $vehicle->name }}--}}
                                         </td>
                                     </tr>
                                 @endforeach

@@ -22,7 +22,6 @@ class CreateVehiclesTable extends Migration
             $table->string('type_ts');
             $table->string('gus_number_vehicle');
 
-
             $table->timestamps();
         });
     }

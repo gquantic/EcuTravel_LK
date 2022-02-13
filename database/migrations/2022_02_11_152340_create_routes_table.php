@@ -41,6 +41,6 @@ class CreateRoutesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('routes');
+//        Schema::dropIfExists('routes');
     }
 }
