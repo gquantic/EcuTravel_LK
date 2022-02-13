@@ -215,7 +215,7 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header expanded">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template/index.html"><span class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="/"><span class="brand-logo">
                             <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                                 <defs>
                                     <linearGradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -239,65 +239,63 @@
                                     </g>
                                 </g>
                             </svg></span>
-                    <h2 class="brand-text">Vuexy</h2>
+                    <h2 class="brand-text">EcuTravel</h2>
                 </a></li>
-            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x d-block d-xl-none text-primary toggle-icon font-medium-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-disc d-none d-xl-block collapse-toggle-icon primary font-medium-4"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg></a></li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
     <div class="main-menu-content ps ps--active-y">
         <ul class="navigation navigation-main">
-            <li class=" nav-item">
+            <li class="navigation-header text-truncate">
+                <span>Панель</span>
+            </li>
+            <li class="nav-item">
                 <a class="d-flex align-items-center" href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Панель</span>
                 </a>
             </li>
-            <li class=" nav-item">
-                <a class="d-flex align-items-center" href="/dashboard/reference">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    <span class="menu-title text-truncate" data-i18n="Email">Справочники</span>
+
+            <li class="navigation-header text-truncate">
+                <span>Справочники</span>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="{{ route('drivers.index') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span class="menu-title text-truncate" data-i18n="Email">Водители</span>
                 </a>
             </li>
-            <li class="nav-item has-sub">
+            <li class="nav-item">
                 <a class="d-flex align-items-center" href="/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span class="menu-title text-truncate" data-i18n="Dashboards">Перевозчики</span>
-                    <span class="badge badge-light-warning rounded-pill ms-auto me-1">{{ \App\Models\Driver::all()->count() }}</span></a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="d-flex align-items-center" href="{{ route('drivers.index') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
-                            <span class="menu-item text-truncate" data-i18n="Analytics">Список</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="d-flex align-items-center" href="{{ route('drivers.create') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
-                            <span class="menu-item text-truncate" data-i18n="eCommerce">Добавить</span>
-                        </a>
-                    </li>
-                </ul>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span class="menu-title text-truncate" data-i18n="Email">Транспортные средства</span>
+                </a>
             </li>
-            <li class="nav-item has-sub">
+            <li class="nav-item">
                 <a class="d-flex align-items-center" href="/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span class="menu-title text-truncate" data-i18n="Dashboards">Маршруты</span>
-                    <span class="badge badge-light-warning rounded-pill ms-auto me-1">{{ \App\Models\Route::all()->count() }}</span></a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="d-flex align-items-center" href="{{ route('routes.index') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
-                            <span class="menu-item text-truncate" data-i18n="Analytics">Список</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="d-flex align-items-center" href="{{ route('routes.create') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
-                            <span class="menu-item text-truncate" data-i18n="eCommerce">Добавить</span>
-                        </a>
-                    </li>
-                </ul>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span class="menu-title text-truncate" data-i18n="Email">Остановочные пункты</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    <span class="menu-title text-truncate" data-i18n="Email">Маршруты</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span class="menu-title text-truncate" data-i18n="Email">Экипажи</span>
+                </a>
+            </li>
+
+            <li class="navigation-header text-truncate">
+                <span>Финансы</span>
+            </li>
+
+            <li class="navigation-header text-truncate">
+                <span>Настройки</span>
             </li>
         </ul>
     </div>
