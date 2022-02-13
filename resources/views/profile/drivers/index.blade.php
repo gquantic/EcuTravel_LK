@@ -27,6 +27,12 @@
                                     </a>
                                 </div>
                             </div>
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @endif
+
                             <table class="invoice-list-table table dataTable no-footer dtr-column" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
                                 <thead>
                                 <tr role="row">

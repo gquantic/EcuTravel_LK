@@ -19,27 +19,31 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="card">
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <form action="{{ route('vehicle.store') }}" method="POST">
                             @csrf
                             @method('POST')
 
                             <div class="form-group mb-1">
-                                <label for="">Ф.И.О.</label>
-                                <input type="text" name="name" class="form-control mt-1">
-                            </div>
-
-                            <div class="form-group mb-1">
                                 <label for="">Тип транспорта</label>
-                                <select class="form-control mt-1" name="object" id="objectType">
+                                <select class="form-control mt-1" name="type_ts" id="objectType">
                                     <option value="bus">Автобус</option>
-                                    <option value="plane">Самолёт</option>
+                                    <option value="plane">Легковой транспорт</option>
                                 </select>
                             </div>
 
                             <div class="form-group mb-1" id="gosNumber">
                                 <label for="">Гос. номер</label>
-                                <input type="text" name="gos_number" class="form-control mt-1">
+                                <input type="text" name="gus_number_vehicle" class="form-control mt-1">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Создать</button>
