@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,13 +39,12 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::resources([
         'drivers' => \App\Http\Controllers\DriverController::class,
         'routes' => \App\Http\Controllers\RouteController::class,
+        'vehicle'=> \App\Http\Controllers\VehicleController::class,
     ]);
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
 
 Route::redirect('home', '/dashboard/');
