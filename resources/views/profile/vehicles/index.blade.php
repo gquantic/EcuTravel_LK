@@ -49,7 +49,14 @@
                                             {{ $vehicle->id }}
                                         </td>
                                         <td>
-                                            {{ $vehicle->type_ts }}
+                                            @switch($vehicle->type_ts)
+                                                @case('plane')
+                                                Легковой транспорт
+                                                @break
+                                                @case('bus')
+                                                Автобусная
+                                                @break
+                                            @endswitch
                                         </td>
                                         <td>
                                             {{ $vehicle->gus_number_vehicle }}

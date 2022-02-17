@@ -53,6 +53,11 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'type_ts'=>'required',
+            'gus_number_vehicle'=>'required'
+        ]);
+
         Vehicle::create([
             'user_id'=> \Auth::id(),
             'type_ts'=> $request->type_ts,
