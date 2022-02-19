@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Driver;
 use App\Models\Route;
+use App\Models\Tour;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
-class RouteController extends Controller
+class TourController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     public function __construct()
     {
         $this->pageData = [
@@ -22,10 +30,11 @@ class RouteController extends Controller
      */
     public function index()
     {
-        return view('profile.routes.index', [
-            'pageData' => $this->pageData,
-            'routes' => Route::all()
-        ]);
+         $tours = Tour::all();
+         return view('profile.tours.index', [
+             'pageData' => $this->pageData,
+             'tours' => $tours,
+         ]);
     }
 
     /**
@@ -35,9 +44,11 @@ class RouteController extends Controller
      */
     public function create()
     {
-        return view('profile.routes.create', [
+        return view('profile.tours.create', [
             'pageData' => $this->pageData,
             'drivers' => Driver::all(),
+            'vehicles' => Vehicle::all(),
+            'routes' => Route::all()
         ]);
     }
 
@@ -45,26 +56,33 @@ class RouteController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        Route::create([
-            'user' => \Auth::id(),
-            'from' => $request->depart,
-            'destination' => $request->destination,
-        ]);
+        $drivers = serialize($request->drivers);
 
-        return redirect()->route('routes.index');
+        Tour::create([
+            'user' => \Auth::id(),
+            'driver' => "1",
+            'route' => $request->route,
+            'vehicle' => $request->vehicle,
+            'depart_time' => $request->depart_time,
+            'arrival_time' => $request->arrival_time,
+            'adult_price' => $request->adult_price,
+            'child_price' => $request->child_price,
+            'bag_price' => $request->bag_price,
+        ]);
+        return redirect('dashboard/tours');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Tour  $tour
      * @return \Illuminate\Http\Response
      */
-    public function show(Route $route)
+    public function show(Tour $tour)
     {
         //
     }
@@ -72,10 +90,10 @@ class RouteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Tour  $tour
      * @return \Illuminate\Http\Response
      */
-    public function edit(Route $route)
+    public function edit(Tour $tour)
     {
         //
     }
@@ -84,10 +102,10 @@ class RouteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Tour  $tour
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Route $route)
+    public function update(Request $request, Tour $tour)
     {
         //
     }
@@ -95,10 +113,10 @@ class RouteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Tour  $tour
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Route $route)
+    public function destroy(Tour $tour)
     {
         //
     }

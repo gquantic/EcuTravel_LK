@@ -29,7 +29,10 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     ];
 
     Route::get('/', function () use ($pageData) {
-        return view('profile.dashboard', compact('pageData'));
+        return view('profile.dashboard', [
+            'pageData' => $pageData,
+            'tours' => \App\Models\Tour::all(),
+        ]);
     });
 
     Route::get('/reference', function () use ($pageData) {
@@ -40,6 +43,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         'drivers' => \App\Http\Controllers\DriverController::class,
         'routes' => \App\Http\Controllers\RouteController::class,
         'vehicle'=> \App\Http\Controllers\VehicleController::class,
+        'tours'=> \App\Http\Controllers\TourController::class,
     ]);
 });
 

@@ -19,7 +19,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card card-app-design">
                     <div class="card-body">
-                        <span class="badge badge-light-primary">{{ date('d M Y') }}</span>
+                        <span class="badge badge-light-primary">{{ date('d M Y ') }}</span>
                         <h4 class="card-title mt-1 mb-75 pt-25">Статистика</h4>
                         <div class="design-group mb-2 pt-50">
                             <h6 class="section-label">Маршруты</h6>
@@ -65,20 +65,24 @@
                             <div class="row d-flex justify-content-between align-items-center m-1">
                                 <div class="col-lg-6 d-flex align-items-center">
                                     <div class="dataTables_length" id="DataTables_Table_0_length">
-                                        <label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
-                                                <option value="10">10</option><option value="25">25</option><option value="50">50</option>
-                                                <option value="100">100</option></select>
+                                        <label>Show
+                                            <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>
                                         </label>
                                     </div>
-                                    <div class="dt-action-buttons text-xl-end text-lg-start text-lg-end text-start ">
+                                    <div class="dt-action-buttons text-xl-end text-lg-start text-lg-end text-start">
                                         <div class="dt-buttons">
-                                            <button class="dt-button btn btn-primary btn-add-record ms-2" tabindex="0" aria-controls="DataTables_Table_0" type="button"><span>Добавить перевозчика</span></button>
+                                            <a class="dt-button btn btn-primary btn-add-record ms-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" href="{{ route('tours.create') }}"><span>Добавить перевозчика</span></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center justify-content-lg-end flex-lg-nowrap flex-wrap pe-lg-1 p-0">
                                     <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                                        <label>Search<input type="search" class="form-control" placeholder="Search Invoice" aria-controls="DataTables_Table_0"></label>
+                                        <label>Search<input type="search" class="form-control " placeholder="Search Invoice" aria-controls="DataTables_Table_0"></label>
                                     </div>
                                     <div class="invoice_status ms-sm-2"></div>
                                 </div>
@@ -106,9 +110,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd">
-                                        <td valign="top" colspan="7" class="dataTables_empty">Загрузка...</td>
+{{--                                @foreach($tours as $tour)--}}
+                                    <tr class="odd" onclick="window.location.href = '{{route('tours.index')}}'">
+                                        <td valign="top" colspan="7" class="dataTables_empty">Подробнее...</td>
+{{--                                        <td>{{$tour->id}}</td>--}}
                                     </tr>
+{{--                                @endforeach--}}
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-between mx-2 row">

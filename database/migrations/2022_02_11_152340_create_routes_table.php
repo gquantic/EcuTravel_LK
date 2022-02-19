@@ -17,18 +17,11 @@ class CreateRoutesTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user');
-            $table->unsignedBigInteger('driver');
 
             $table->foreign('user')->references('id')->on('users');
-            $table->foreign('driver')->references('id')->on('drivers');
 
             $table->string('from');
             $table->string('destination');
-            $table->timestamp('depart_time')->nullable();
-            $table->timestamp('arrival_time')->nullable();
-
-            $table->integer('adult_price');
-            $table->integer('child_price');
 
             $table->timestamps();
         });

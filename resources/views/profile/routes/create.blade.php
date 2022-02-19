@@ -24,37 +24,13 @@
                             @method('POST')
 
                             <div class="form-group mb-1">
-                                <label for="">Водитель</label>
-                                <select name="driver" id="" class="form-control mt-1">
-                                    @foreach($drivers as $driver)
-                                        <option value="{{ $driver->id }}">{{ $driver->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="form-group mb-1">
                                 <label for="">Точка отправки</label>
-                                <input type="text" name="from" class="form-control mt-1">
+                                <input type="text" name="depart" class="form-control mt-1">
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Конечная остановка</label>
                                 <input type="text" name="destination" class="form-control mt-1">
-                            </div>
-
-                            <div class="form-group mb-1">
-                                <label for="">Время прибытия</label>
-                                <input type="text" name="depart_time" class="form-control mt-1">
-                            </div>
-
-                            <div class="form-group mb-1">
-                                <label for="">Цена за взрослый билет</label>
-                                <input type="text" name="adult_price" class="form-control mt-1">
-                            </div>
-
-                            <div class="form-group mb-1">
-                                <label for="">Цена за детский билет</label>
-                                <input type="text" name="child_price" class="form-control mt-1">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Создать</button>

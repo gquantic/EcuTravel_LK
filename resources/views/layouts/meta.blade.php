@@ -21,7 +21,7 @@
 
     @yield('page-styles')
 </head>
-<body class="pace-done vertical-layout vertical-menu-modern @yield('body-class')">
+<body class="pace-done vertical-layout vertical-menu-modern @yield('body-class')" data-open="click" data-menu="vertical-menu-modern" data-col="">
     <style>
         div {
             overflow-x: visible !important;
@@ -40,6 +40,8 @@
             </div>
             <div class="content-body">
                 @yield('content')
+                <div class="sidenav-overlay"></div>
+                <div class="drag-target"></div>
             </div>
         </div>
     </div>
