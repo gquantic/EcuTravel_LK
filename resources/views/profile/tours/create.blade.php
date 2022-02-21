@@ -23,12 +23,11 @@
                         <form action="{{ route('tours.store') }}" method="POST">
                             @csrf
                             @method('POST')
-
                             <div class="form-group mb-1">
                                 <label for="">Транспорт</label>
                                 <select name="vehicle" id="" class="form-control mt-1">
                                     @foreach($vehicles as $vehicle)
-                                        <option value="{{ $vehicle->id }}"> {{ "$vehicle->type_ts [{$vehicle->gus_number_vehicle}]" }}</option>
+                                        <option value="{{ $vehicle->id}}">{{"$vehicle->type_ts [{$vehicle->gus_number_vehicle}]"}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -62,18 +61,26 @@
                             </div>
 
                             <div class="form-group mb-1">
-                                <label for="">Цена за взрослый билет</label>
-                                <input type="text" name="adult_price" class="form-control mt-1">
+                                <label for="">Дата отправления</label>
+                                <input type="datetime-local" name="arrival_time" class="form-control mt-1">
                             </div>
 
                             <div class="form-group mb-1">
-                                <label for="">Цена за детский билет</label>
-                                <input type="text" name="child_price" class="form-control mt-1">
+                                <label for="">Дата прибытия</label>
+                                <input type="datetime-local" name="arrival_time" class="form-control mt-1">
                             </div>
 
                             <div class="form-group mb-1">
-                                <label for="">Цена за багаж</label>
-                                <input type="text" name="bag_price" class="form-control mt-1">
+                                <label for="">Примечания</label>
+                                <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Состояние</label>
+                                <select name="vehicle" id="" class="form-control mt-1">
+                                        <option value="">Активно</option>
+                                        <option value="">Не активно</option>
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Создать</button>

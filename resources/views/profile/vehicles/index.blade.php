@@ -54,7 +54,10 @@
                                                 Легковой транспорт
                                                 @break
                                                 @case('bus')
-                                                Автобусная
+                                                Автобус
+                                                @break
+                                                @case('minibus')
+                                                Микроавтобус
                                                 @break
                                             @endswitch
                                         </td>

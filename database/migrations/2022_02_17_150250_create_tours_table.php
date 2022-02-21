@@ -24,13 +24,8 @@ class CreateToursTable extends Migration
 
             $table->string('driver');
 
-
             $table->timestamp('depart_time')->nullable();
             $table->timestamp('arrival_time')->nullable();
-
-            $table->integer('adult_price');
-            $table->integer('child_price');
-            $table->integer('bag_price');
 
             $table->timestamps();
         });

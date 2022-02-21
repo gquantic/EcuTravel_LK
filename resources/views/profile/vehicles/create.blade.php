@@ -34,15 +34,24 @@
                             @method('POST')
 
                             <div class="form-group mb-1">
-                                <label for="">Тип транспорта</label>
+                                <label for="">Тип транспортного средства</label>
                                 <select class="form-control mt-1" name="type_ts" id="objectType">
                                     <option value="bus">Автобус</option>
                                     <option value="plane">Легковой транспорт</option>
+                                    <option value="minibus">Микроавтобус</option>
+                                    <option value="">Черная посаженная приора(оперская)</option>
+                                    <option value="">Дядя Мага с пятого поселка на убитой шестерке</option>
                                 </select>
                             </div>
 
                             <div class="form-group mb-1" id="gosNumber">
-                                <label for="">Гос. номер</label>
+                                <label for="">Модель</label>
+                                <input type="text" name="model_vehicle" class="form-control mt-1">
+                            </div>
+
+
+                            <div class="form-group mb-1" id="gosNumber">
+                                <label for="">Регистрационный номер</label>
                                 <input type="text" name="gus_number_vehicle" class="form-control mt-1">
                             </div>
 

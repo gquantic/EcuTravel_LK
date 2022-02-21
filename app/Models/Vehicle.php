@@ -20,5 +20,6 @@ class Vehicle extends Model
         'user_id',
         'type_ts',
         'gus_number_vehicle',
+        'model_vehicle',
     ];
 }

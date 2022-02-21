@@ -107,7 +107,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => 'Поле :attribute является обязательным для заполнения.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -159,6 +159,22 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+                         /** VEHICLE **/
+        'gus_number_vehicle'=> '"Регистрационный номер"',
+        'model_vehicle' => '"Модель"',
+                        /** ROUTES **/
+//        'number_routes'=>'Номер маршрута',
+//        'route_type'=>'"Тип маршрута"',
+//        'depart_station'=>'"Станция отправления"',
+//        'departure_address'=>'"Адрес отправления"',
+//        'arrival_station'=>'"Станция прибытия"',
+//        'arrival_address'=>'"Адрес прибытия"',
+//        'basic_price'=>'"Базовая стоимость багажа"',
+//        'child_price'=>'"Стоимость детского билета"',
+//        'bag_price'=>'"Стоимость багажа"',
+
+    ],
+
 
 ];

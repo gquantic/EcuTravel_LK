@@ -49,10 +49,28 @@ class RouteController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'number_routes'=>'required',
+            'route_type'=>'required',
+            'depart_station'=>'required',
+            'departure_address'=>'required',
+            'arrival_station'=>'required',
+            'arrival_address'=>'required',
+            'basic_price'=>'required',
+            'child_price'=>'required',
+            'bag_price'=>'required',
+        ]);
         Route::create([
             'user' => \Auth::id(),
-            'from' => $request->depart,
-            'destination' => $request->destination,
+            'number_routes' => $request->number_routes,
+            'type_routes' => $request->type_routes,
+            'depart_station' => $request->depart_station,
+            'departure_address' => $request->departure_address,
+            'arrival_station' => $request->arrival_station,
+            'arrival_address' => $request->arrival_address,
+            'basic_price' => $request->basic_price,
+            'child_price' => $request->child_price,
+            'bag_price' => $request->bag_price,
         ]);
 
         return redirect()->route('routes.index');

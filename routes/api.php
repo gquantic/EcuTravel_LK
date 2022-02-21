@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ToursController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('drivers', function () {
-    $drivers = \App\Models\Driver::all();
-    return json_encode($drivers, JSON_UNESCAPED_UNICODE);
-});
+Route::prefix('guide')->group(function () {
+    Route::get('drivers', function () {
+        $drivers = \App\Models\Driver::all();
+        return json_encode($drivers, JSON_UNESCAPED_UNICODE);
+    });
 
-Route::get('routes', function () {
-    $routes = \App\Models\Route::all();
-    return json_encode($routes, JSON_UNESCAPED_UNICODE);
+    Route::get('routes', function () {
+        $routes = \App\Models\Route::all();
+        return json_encode($routes, JSON_UNESCAPED_UNICODE);
+    });
+
+    Route::post('tours', function (Request $request) {
+        $toursController = new ToursController();
+        $toursController->searchWithRoute($request->from, $request->to);
+    });
 });

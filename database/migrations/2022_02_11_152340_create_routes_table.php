@@ -20,8 +20,20 @@ class CreateRoutesTable extends Migration
 
             $table->foreign('user')->references('id')->on('users');
 
-            $table->string('from');
+            $table->string('route_type');
+            $table->string('number_routes');
+
+            $table->string('depart_station');
+            $table->string('departure_address');
+            $table->string('arrival_station');
+            $table->string('arrival_address');
+                        /** ^_^ **/
             $table->string('destination');
+            $table->string('destination_station');
+                        /** БАГАЖ **/
+            $table->integer('basic_price');
+            $table->integer('child_price');
+            $table->integer('bag_price');
 
             $table->timestamps();
         });

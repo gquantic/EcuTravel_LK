@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
+use http\Exception\BadConversionException;
 use Illuminate\Http\Request;
 
 /**
@@ -55,13 +56,16 @@ class VehicleController extends Controller
     {
         $request->validate([
             'type_ts'=>'required',
-            'gus_number_vehicle'=>'required'
+            'gus_number_vehicle'=>'required',
+            'model_vehicle'=>'required'
         ]);
 
         Vehicle::create([
             'user_id'=> \Auth::id(),
             'type_ts'=> $request->type_ts,
             'gus_number_vehicle'=> $request->gus_number_vehicle,
+            'model_vehicle'=> $request->model_vehicle,
+
         ]);
 
         return redirect()->route('vehicle.index');

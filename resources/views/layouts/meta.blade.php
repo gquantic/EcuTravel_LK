@@ -68,6 +68,10 @@
 
             $('body').removeClass('menu-collapsed');
         });
+                /** ИСЧЕЗНОВЕНИЕ ВАЛИДАЦИИ **/
+        $(function (){
+            $('.invalid-feedback').fadeOut(3000);
+        });
     </script>
 </body>
 </html>
