@@ -63,7 +63,7 @@ class RouteController extends Controller
         Route::create([
             'user' => \Auth::id(),
             'number_routes' => $request->number_routes,
-            'type_routes' => $request->type_routes,
+            'route_type' => $request->route_type,
             'depart_station' => $request->depart_station,
             'departure_address' => $request->departure_address,
             'arrival_station' => $request->arrival_station,
@@ -71,6 +71,7 @@ class RouteController extends Controller
             'basic_price' => $request->basic_price,
             'child_price' => $request->child_price,
             'bag_price' => $request->bag_price,
+            'note_routes' => $request->note_routes,
         ]);
 
         return redirect()->route('routes.index');

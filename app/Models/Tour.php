@@ -15,9 +15,9 @@ class Tour extends Model
         'vehicle',
         'depart_time',
         'arrival_time',
-        'adult_price',
-        'child_price',
-        'bag_price',
+        'departure_date',
+        'arrival_date',
+        'note_tours',
     ];
 
 }

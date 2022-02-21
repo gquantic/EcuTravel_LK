@@ -21,5 +21,6 @@ class Vehicle extends Model
         'type_ts',
         'gus_number_vehicle',
         'model_vehicle',
+        'note_vehicle'
     ];
 }

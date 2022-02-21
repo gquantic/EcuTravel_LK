@@ -65,6 +65,7 @@ class VehicleController extends Controller
             'type_ts'=> $request->type_ts,
             'gus_number_vehicle'=> $request->gus_number_vehicle,
             'model_vehicle'=> $request->model_vehicle,
+            'note_vehicle'=> $request->note_vehicle,
 
         ]);
 

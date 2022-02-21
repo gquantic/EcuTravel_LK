@@ -12,13 +12,14 @@ class Route extends Model
     protected $fillable = [
         'user',
         'number_routes',
-        'type_routes',
+        'route_type',
         'depart_station',
         'departure_address',
         'arrival_station',
         'arrival_address',
         'basic_price',
         'child_price',
-        'baggage_cost',
+        'bag_price',
+        'note_routes'
     ];
 }

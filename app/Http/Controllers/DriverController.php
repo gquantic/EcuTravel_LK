@@ -54,6 +54,7 @@ class DriverController extends Controller
             'name' => $request->name,
             'passport_number' => $request->passport,
             'position' => $request->position,
+            'note_drivers'=>$request->note_drivers
         ]);
 
         return redirect()->route('drivers.index')->with('success', 'Перевозчик успешно добавлен!');

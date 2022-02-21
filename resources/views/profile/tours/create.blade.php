@@ -34,50 +34,80 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Водитель</label>
-                                <select name="drivers[]" id="" class="form-control mt-1 select2 select2-selection--multiple" multiple>
+                                <select name="drivers" id="" class="form-control mt-1 select2 select2-selection--multiple @error('drivers') is-invalid @enderror" multiple>
                                     @foreach($drivers as $driver)
                                         <option value="{{ $driver->id }}">{{ $driver->name }}</option>
                                     @endforeach
                                 </select>
+
+                                @error('drivers')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Маршрут</label>
-                                <select name="route" id="" class="form-control mt-1">
+                                <select name="route" id="" class="form-control mt-1 ">
                                     @foreach($routes as $route)
-                                        <option value="{{ $route->id }}">{{ $route->from . ' - ' . $route->destination}}</option>
+                                        <option value="{{ $route->id }}">{{ $route->depart_station . ' - ' . $route->arrival_station}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Время отправки</label>
-                                <input type="datetime-local" name="depart_time" class="form-control mt-1">
+                                <input type="datetime-local" name="depart_time" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
+
+                                @error('depart_time')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Время прибытия</label>
-                                <input type="datetime-local" name="arrival_time" class="form-control mt-1">
+                                <input type="datetime-local" name="arrival_time" class="form-control mt-1 @error('arrival_time') is-invalid @enderror">
+
+                                @error('arrival_time')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Дата отправления</label>
-                                <input type="datetime-local" name="arrival_time" class="form-control mt-1">
+                                <input type="datetime-local" name="departure_date" class="form-control mt-1 @error('departure_date') is-invalid @enderror">
+
+                                @error('departure_date')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Дата прибытия</label>
-                                <input type="datetime-local" name="arrival_time" class="form-control mt-1">
+                                <input type="datetime-local" name="arrival_date" class="form-control mt-1 @error('arrival_date') is-invalid @enderror">
+
+                                @error('arrival_date')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Примечания</label>
-                                <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control mt-1" name="note_tours" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Состояние</label>
-                                <select name="vehicle" id="" class="form-control mt-1">
+                                <select name="" id="" class="form-control mt-1">
                                         <option value="">Активно</option>
                                         <option value="">Не активно</option>
                                 </select>

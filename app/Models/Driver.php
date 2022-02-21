@@ -14,5 +14,6 @@ class Driver extends Model
         'name',
         'passport_number',
         'position',
+        'note_drivers',
     ];
 }

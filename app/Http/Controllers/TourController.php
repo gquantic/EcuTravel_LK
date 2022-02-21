@@ -60,19 +60,26 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        $drivers = serialize($request->drivers);
 
-        Tour::create([
+        $request->validate([
+            'driver' => 'required',
+            'depart_time' => 'required',
+            'arrival_time' => 'required',
+            'departure_date' => 'required',
+            'arrival_date' => 'required',
+        ]);
+        $tour = new Tour([
             'user' => \Auth::id(),
             'driver' => "1",
             'route' => $request->route,
             'vehicle' => $request->vehicle,
             'depart_time' => $request->depart_time,
             'arrival_time' => $request->arrival_time,
-            'adult_price' => $request->adult_price,
-            'child_price' => $request->child_price,
-            'bag_price' => $request->bag_price,
+            'departure_date' => $request->depart_date,
+            'arrival_date' => $request->arrival_date,
+            'note_tours' => $request->note_tours
         ]);
+        $tour->save();
         return redirect('dashboard/tours');
     }
 

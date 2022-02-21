@@ -37,7 +37,7 @@
                                 <label for="">Тип транспортного средства</label>
                                 <select class="form-control mt-1" name="type_ts" id="objectType">
                                     <option value="bus">Автобус</option>
-                                    <option value="plane">Легковой транспорт</option>
+                                    <option value="passenger">Легковой транспорт</option>
                                     <option value="minibus">Микроавтобус</option>
                                     <option value="">Черная посаженная приора(оперская)</option>
                                     <option value="">Дядя Мага с пятого поселка на убитой шестерке</option>
@@ -53,6 +53,19 @@
                             <div class="form-group mb-1" id="gosNumber">
                                 <label for="">Регистрационный номер</label>
                                 <input type="text" name="gus_number_vehicle" class="form-control mt-1">
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Примечания</label>
+                                <textarea class="form-control mt-1" name="note_vehicle" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Состояние</label>
+                                <select name="" id="" class="form-control mt-1">
+                                    <option value="">Активно</option>
+                                    <option value="">Не активно</option>
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Создать</button>

@@ -38,6 +38,19 @@
                                 <input type="text" name="position" class="form-control mt-1">
                             </div>
 
+                            <div class="form-group mb-1">
+                                <label for="">Примечания</label>
+                                <textarea class="form-control mt-1" name="note_drivers" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Состояние</label>
+                                <select name="" id="" class="form-control mt-1">
+                                    <option value="">Активно</option>
+                                    <option value="">Не активно</option>
+                                </select>
+                            </div>
+
                             <button type="submit" class="btn btn-primary">Создать</button>
                         </form>
                     </div>

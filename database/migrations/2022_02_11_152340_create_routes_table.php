@@ -27,9 +27,11 @@ class CreateRoutesTable extends Migration
             $table->string('departure_address');
             $table->string('arrival_station');
             $table->string('arrival_address');
+
+            $table->string('note_routes');
+
+
                         /** ^_^ **/
-            $table->string('destination');
-            $table->string('destination_station');
                         /** БАГАЖ **/
             $table->integer('basic_price');
             $table->integer('child_price');

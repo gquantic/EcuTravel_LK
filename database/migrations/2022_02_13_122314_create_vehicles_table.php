@@ -20,7 +20,9 @@ class CreateVehiclesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->string('type_ts');
+            $table->string('model_vehicle');
             $table->string('gus_number_vehicle');
+            $table->string('note_vehicle');
 
             $table->timestamps();
         });
