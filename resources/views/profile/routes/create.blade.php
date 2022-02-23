@@ -26,6 +26,7 @@
                             <div class="form-group mb-1">
                                 <label for="">Номер маршрута</label>
                                 <input type="text" name="number_routes" class="form-control mt-1 @error('number_routes') is-invalid @enderror" >
+
                                 @error('number_routes')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

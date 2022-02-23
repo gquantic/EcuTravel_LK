@@ -22,7 +22,7 @@ class CreateDriversTable extends Migration
             $table->string('name');
             $table->string('passport_number');
             $table->string('position')->default('driver');
-            $table->string('note_drivers');
+            $table->string('note_drivers')->nullable();
 
 
             $table->timestamps();

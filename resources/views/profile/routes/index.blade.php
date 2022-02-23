@@ -32,21 +32,57 @@
                                 <tr role="row">
                                     <th class="control sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="display: none;"></th>
                                     <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px;" aria-sort="descending" aria-label="#: activate to sort column ascending">
-                                        #
+                                        Номер маршрута
                                     </th>
+
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 42px;" aria-label=": activate to sort column ascending">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 270px;" aria-label="Client: activate to sort column ascending">
-                                        Client
+                                        Тип маршрута
                                     </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Client: activate to sort column ascending">
+                                        Станция отправления
+                                    </th>
+
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 73px;" aria-label="Total: activate to sort column ascending">
-                                        Total
+                                        Станция прибытия
                                     </th>
+
                                     <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 130px;" aria-label="Issued Date: activate to sort column ascending">
                                         Дата поездки
                                     </th>
+
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
-                                        Билетов
+                                        Станция прибытия
                                     </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+                                        Адрес прибытия
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+                                        Номер маршрута
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+                                        Примечание
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+                                        Базовая стоимость багажа
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+                                        Стоимость детского билета
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+                                        Стоимость багажа
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">
+
+                                    </th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -56,20 +92,50 @@
                                             {{ $route->id }}
                                         </td>
                                         <td>
-                                            {{ $route->object_type }}
+                                            @switch($route->route_type)
+                                                @case('intercity')
+                                                Междугородный
+                                                @break
+                                                @case('regional')
+                                                Региональный
+                                                @break
+                                                @case('inner_city')
+                                                Внутригородской
+                                                @break
+                                            @endswitch
                                         </td>
                                         <td>
-                                            {{ $route->name }}
+                                            {{ $route->depart_station }}
                                         </td>
                                         <td>
-                                            {{ $route->gos_number }}
+                                            {{ $route->departure_address }}
                                         </td>
                                         <td>
-                                            {{ $route->created_at }}
+                                            {{ $route->arrival_station }}
                                         </td>
                                         <td>
-                                            {{ $route->name }}
+                                            {{ $route->arrival_address }}
                                         </td>
+
+                                        <td>
+                                            {{ $route->number_routes }}
+                                        </td>
+                                        <td>
+                                            {{ $route->note_routes }}
+                                        </td>
+
+                                        <td>
+                                            {{ $route->basic_price}}
+                                        </td>
+
+                                        <td>
+                                            {{ $route->child_price }}
+                                        </td>
+
+                                        <td>
+                                            {{ $route->bag_price }}
+                                        </td>
+
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -60,7 +60,6 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'driver' => 'required',
             'depart_time' => 'required',
@@ -68,16 +67,17 @@ class TourController extends Controller
             'departure_date' => 'required',
             'arrival_date' => 'required',
         ]);
+
         $tour = new Tour([
             'user' => \Auth::id(),
             'driver' => "1",
-            'route' => $request->route,
-            'vehicle' => $request->vehicle,
-            'depart_time' => $request->depart_time,
-            'arrival_time' => $request->arrival_time,
-            'departure_date' => $request->depart_date,
-            'arrival_date' => $request->arrival_date,
-            'note_tours' => $request->note_tours
+            'route' => $request->get('route'),
+            'vehicle' => $request->get('vehicle'),
+            'depart_time' => $request->get('depart_time'),
+            'arrival_time' => $request->get('arrival_time'),
+            'departure_date' => $request->get('depart_date'),
+            'arrival_date' => $request->get('arrival_date'),
+            'note_tours' => $request->get('note_tours')
         ]);
         $tour->save();
         return redirect('dashboard/tours');

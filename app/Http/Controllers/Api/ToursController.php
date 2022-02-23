@@ -13,9 +13,9 @@ class ToursController extends Controller
 
     }
 
-    public function searchWithRoute($from, $destination)
-    {
-        $route = Route::where('from', $from)->where('destination', $destination);
-        return json_encode($route, JSON_UNESCAPED_UNICODE);
-    }
+//    public function searchWithRoute($from, $destination)
+//    {
+//        $route = Route::where('from', $from)->where('destination', $destination);
+//        return json_encode($route, JSON_UNESCAPED_UNICODE);
+//    }
 }

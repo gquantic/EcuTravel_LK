@@ -28,7 +28,7 @@ class CreateToursTable extends Migration
             $table->timestamp('arrival_time')->nullable();
             $table->timestamp('departure_date')->nullable();
             $table->timestamp('arrival_date')->nullable();
-            $table->string('note_tours');
+            $table->string('note_tours')->nullable();
 
             $table->timestamps();
         });

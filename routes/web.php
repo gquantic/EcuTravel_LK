@@ -31,19 +31,24 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/', function () use ($pageData) {
         return view('profile.dashboard', [
             'pageData' => $pageData,
-            'tours' => \App\Models\Tour::all(),
+//            'tours' => \App\Models\Tour::all(),
         ]);
     });
+
+    /** PROFILE **/
+//    Route::get('/profile');
 
     Route::get('/reference', function () use ($pageData) {
         return view('profile.reference', compact('pageData'));
     });
+
 
     Route::resources([
         'drivers' => \App\Http\Controllers\DriverController::class,
         'routes' => \App\Http\Controllers\RouteController::class,
         'vehicle'=> \App\Http\Controllers\VehicleController::class,
         'tours'=> \App\Http\Controllers\TourController::class,
+        'account'=>\App\Http\Controllers\AccountController::class,
     ]);
 });
 

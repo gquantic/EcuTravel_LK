@@ -28,7 +28,7 @@ class CreateRoutesTable extends Migration
             $table->string('arrival_station');
             $table->string('arrival_address');
 
-            $table->string('note_routes');
+            $table->string('note_routes')->nullable();
 
 
                         /** ^_^ **/

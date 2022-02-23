@@ -37,8 +37,11 @@
                                     <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px;" aria-sort="descending" aria-label="#: activate to sort column ascending">
                                         Транспорт
                                     </th>
+                                    <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px;" aria-sort="descending" aria-label="#: activate to sort column ascending">
+                                        Модель
+                                    </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 73px;" aria-label="Total: activate to sort column ascending">
-                                        Гос.номер
+                                        Рег.номер
                                     </th>
                                 </tr>
                                 </thead>
@@ -60,6 +63,9 @@
                                                 Микроавтобус
                                                 @break
                                             @endswitch
+                                        </td>
+                                        <td>
+                                            {{ $vehicle->model_vehicle }}
                                         </td>
                                         <td>
                                             {{ $vehicle->gus_number_vehicle }}

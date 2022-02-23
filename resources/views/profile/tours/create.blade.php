@@ -20,7 +20,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('tours.store') }}" method="POST">
+                        <form action="{{ route('tours.store')}}" method="POST">
                             @csrf
                             @method('POST')
                             <div class="form-group mb-1">
@@ -34,17 +34,11 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Водитель</label>
-                                <select name="drivers" id="" class="form-control mt-1 select2 select2-selection--multiple @error('drivers') is-invalid @enderror" multiple>
+                                <select name="drivers" id="" class="form-control mt-1 select2 select2-selection--multiple" multiple>
                                     @foreach($drivers as $driver)
                                         <option value="{{ $driver->id }}">{{ $driver->name }}</option>
                                     @endforeach
                                 </select>
-
-                                @error('drivers')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
@@ -58,7 +52,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Время отправки</label>
-                                <input type="datetime-local" name="depart_time" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
+                                <input type="time" name="depart_time" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
 
                                 @error('depart_time')
                                 <span class="invalid-feedback" role="alert">
@@ -69,12 +63,12 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Время прибытия</label>
-                                <input type="datetime-local" name="arrival_time" class="form-control mt-1 @error('arrival_time') is-invalid @enderror">
+                                <input type="time" name="arrival_time" class="form-control mt-1 @error('arrival_time') is-invalid @enderror">
 
                                 @error('arrival_time')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
 
@@ -83,9 +77,9 @@
                                 <input type="datetime-local" name="departure_date" class="form-control mt-1 @error('departure_date') is-invalid @enderror">
 
                                 @error('departure_date')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
 
@@ -111,6 +105,7 @@
                                         <option value="">Активно</option>
                                         <option value="">Не активно</option>
                                 </select>
+
                             </div>
 
                             <button type="submit" class="btn btn-primary">Создать</button>

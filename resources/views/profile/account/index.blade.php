@@ -1,0 +1,111 @@
+@extends('layouts.meta')
+
+@section('page-title')
+    Аккаунт
+@endsection
+
+@section('page-styles')
+    <link rel="stylesheet" href="{{ asset('css/base/pages/dashboard-ecommerce.css') }}">
+@endsection
+
+@section('body-class')
+    pace-done vertical-layout vertical-menu-modern navbar-floating footer-static menu-expanded
+@endsection
+@section('content')
+
+
+<section class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <div class="row">
+            <div class="col-12">
+                <!-- profile -->
+                <div class="card">
+                    <div class="card-header border-bottom">
+                        <h4 class="card-title">Детали профиля</h4>
+                    </div>
+                    <div class="card-body py-2 my-25">
+                        <!-- header section -->
+                        <div class="d-flex">
+                            <a href="#" class="me-25">
+                                <img src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" id="account-upload-img" class="uploadedAvatar rounded me-50" alt="profile image" height="100" width="100">
+                            </a>
+                            <!-- upload and reset button -->
+                            <div class="d-flex align-items-end mt-75 ms-1">
+                                <div>
+                                    <label for="account-upload" class="btn btn-sm btn-primary mb-75 me-75 waves-effect waves-float waves-light">Загрузить лого</label>
+                                    <input type="file" id="account-upload" hidden="" accept="image/*">
+{{--                                    <button type="button" id="account-reset" class="btn btn-sm btn-outline-secondary mb-75 waves-effect">Reset</button>--}}
+                                    <p class="mb-0">Разрешенные типы файлов: png, jpg, jpeg.</p>
+                                </div>
+                            </div>
+                            <!--/ upload and reset button -->
+                        </div>
+                        <!--/ header section -->
+
+                        <!-- form -->
+                        <form class="validate-form mt-2 pt-50" method="PUT" novalidate="novalidate">
+                            @csrf
+                            @method('PUT')
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountFirstName">E-mail</label>
+                                    <input type="text" class="form-control" id="accountFirstName" name="firstName" value="" data-msg="">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountPhoneNumber">Номер телефона компании</label>
+                                    <input type="tel" class="form-control account-number-mask" id="accountPhoneNumber" name="phoneNumber" placeholder="" value="">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountEmail">Контактное лицо Ф.И.О</label>
+                                    <input type="email" class="form-control" id="accountEmail" name="email">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountOrganization">БИК</label>
+                                    <input type="text" class="form-control" id="accountOrganization" name="organization" placeholder="" value="" aria-invalid="false">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountPhoneNumber">Корректный счет</label>
+                                    <input type="text" class="form-control account-number-mask" id="accountPhoneNumber" name="phoneNumber" value="">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountAddress">Наименование банка</label>
+                                    <input type="text" class="form-control" id="accountAddress" name="address">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountState">Рассчетный счет</label>
+                                    <input type="text" class="form-control" id="accountState" name="state" >
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">ОГРН</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">ИНН</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">Фактический счет</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">Юридический адрес</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary mt-1 me-1 waves-effect waves-float waves-light">Сохранить изменения</button>
+{{--                                    <button type="reset" class="btn btn-outline-secondary mt-1 waves-effect">Вернуть изменения</button>--}}
+                                </div>
+                            </div>
+                        </form>
+                        <!--/ form -->
+                    </div>
+                </div>
+                <!--/ profile -->
+            </div>
+        </div>
+
+    </div>
+</section>
+@endsection
