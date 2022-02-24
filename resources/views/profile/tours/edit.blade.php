@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Просмотр данных о Рейсе {{$tour->id}}</h2>
+                        <h2 class="content-header-title float-start mb-0">Редактирование данных о Рейсе {{$tour->id}}</h2>
                     </div>
                 </div>
             </div>
@@ -33,21 +33,36 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+                            <form action="{{ route('tours.update',$tour) }}" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Транспорт</label>
-                                            <input type="text" class="form-control credit-card-mask"  value="{{$tour->vehicle}}">
+                                            <label class="form-label">Транспорт</label>
+                                            <select disabled name="vehicle" class="form-control credit-card-mask">
+{{--                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>--}}
+{{--                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>--}}
+{{--                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>--}}
+                                            </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Водитель</label>
-                                            <input type="text" class="form-control credit-card-mask"  value="{{$tour->driver}}">
+                                            <label class="form-label">Водитель</label>
+                                            <select disabled name="route_type" class="form-control credit-card-mask">
+{{--                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>--}}
+{{--                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>--}}
+{{--                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>--}}
+                                            </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Маршрут</label>
-                                            <input type="text" class="form-control credit-card-mask" value="{{$tour->route}}">
+                                            <label class="form-label">Маршрут</label>
+                                            <select disabled name="route_type" class="form-control credit-card-mask">
+{{--                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>--}}
+{{--                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>--}}
+{{--                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>--}}
+                                            </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Время отправки</label>
@@ -82,7 +97,11 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                                    </div>
                                 </div>
+                            </form>
                         </div>
                     </div>
                 </div>

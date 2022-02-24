@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
-use http\Exception\BadConversionException;
+//use http\Exception\BadConversionException;
 use Illuminate\Http\Request;
 
 /**
@@ -76,11 +76,11 @@ class VehicleController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Vehicle  $vehicle
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Vehicle $vehicle)
     {
-        //
+        return view('profile.vehicles.show', compact('vehicle'), ['pageData' => $this->pageData]);
     }
 
     /**
@@ -92,7 +92,7 @@ class VehicleController extends Controller
     public function edit(Vehicle $vehicle)
     {
 
-        return view('profile.vehicles.edit',compact('vehicle'));
+        return view('profile.vehicles.edit', compact('vehicle'), ['pageData' => $this->pageData]);
 
     }
 
@@ -101,21 +101,27 @@ class VehicleController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Vehicle  $vehicle
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Vehicle $vehicle)
     {
-        //
+        $request->validate([
+            'model_vehicle'=>'required',
+        ]);
+        $vehicle->update($request->all());
+
+        return redirect()->route('vehicle.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Vehicle  $vehicle
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Vehicle $vehicle)
     {
-        //
+        $vehicle->delete();
+        return redirect()->route('vehicle.index');
     }
 }

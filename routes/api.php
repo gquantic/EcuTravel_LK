@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ToursController;
+//use App\Http\Controllers\Api\ToursController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +30,8 @@ Route::prefix('guide')->group(function () {
         return json_encode($routes, JSON_UNESCAPED_UNICODE);
     });
 
-    Route::post('tours', function (Request $request) {
-        $toursController = new ToursController();
-        $toursController->searchWithRoute($request->from, $request->to);
-    });
+//    Route::post('tours', function (Request $request) {
+//        $toursController = new ToursController();
+//        $toursController->searchWithRoute($request->from, $request->to);
+//    });
 });

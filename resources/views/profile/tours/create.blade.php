@@ -105,9 +105,7 @@
                                         <option value="">Активно</option>
                                         <option value="">Не активно</option>
                                 </select>
-
                             </div>
-
                             <button type="submit" class="btn btn-primary">Создать</button>
                         </form>
                     </div>

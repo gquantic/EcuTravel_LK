@@ -27,7 +27,7 @@
                         <!-- header section -->
                         <div class="d-flex">
                             <a href="#" class="me-25">
-                                <img src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" id="account-upload-img" class="uploadedAvatar rounded me-50" alt="profile image" height="100" width="100">
+                                <img src="{{asset('images\slider\05.jpg')}}" id="account-upload-img" class="uploadedAvatar rounded me-50" alt="profile image" height="100" width="100">
                             </a>
                             <!-- upload and reset button -->
                             <div class="d-flex align-items-end mt-75 ms-1">

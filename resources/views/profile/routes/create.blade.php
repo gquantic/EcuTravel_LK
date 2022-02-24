@@ -25,7 +25,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Номер маршрута</label>
-                                <input type="text" name="number_routes" class="form-control mt-1 @error('number_routes') is-invalid @enderror" >
+                                <input type="number" name="number_routes" class="form-control mt-1 @error('number_routes') is-invalid @enderror" >
 
                                 @error('number_routes')
                                 <span class="invalid-feedback" role="alert">
@@ -46,6 +46,7 @@
                             <div class="form-group mb-1">
                                 <label for="">Станция отправления</label>
                                 <input type="text" name="depart_station" class="form-control mt-1 @error('depart_station') is-invalid @enderror" >
+
                                 @error('depart_station')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -85,7 +86,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Базовая стоимость багажа</label>
-                                <input type="text" name="basic_price" class="form-control mt-1 @error('basic_price') is-invalid @enderror">
+                                <input type="number" name="basic_price" class="form-control mt-1 @error('basic_price') is-invalid @enderror">
                                 @error('basic_price')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -95,7 +96,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Стоимость детского билета</label>
-                                <input type="text" name="child_price" class="form-control mt-1 @error('child_price') is-invalid @enderror">
+                                <input type="number" name="child_price" class="form-control mt-1 @error('child_price') is-invalid @enderror">
                                 @error('child_price')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -105,7 +106,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Стоимость багажа</label>
-                                <input type="text" name="bag_price" class="form-control mt-1 @error('bag_price') is-invalid @enderror">
+                                <input type="number" name="bag_price" class="form-control mt-1 @error('bag_price') is-invalid @enderror">
                                 @error('bag_price')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

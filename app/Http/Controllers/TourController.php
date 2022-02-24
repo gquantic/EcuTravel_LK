@@ -73,36 +73,40 @@ class TourController extends Controller
             'driver' => "1",
             'route' => $request->get('route'),
             'vehicle' => $request->get('vehicle'),
+
             'depart_time' => $request->get('depart_time'),
             'arrival_time' => $request->get('arrival_time'),
-            'departure_date' => $request->get('depart_date'),
+
+            'departure_date' => $request->get('departure_date'),
             'arrival_date' => $request->get('arrival_date'),
             'note_tours' => $request->get('note_tours')
         ]);
         $tour->save();
-        return redirect('dashboard/tours');
+        return redirect()->route('tours.index');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Tour  $tour
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Tour $tour)
     {
-        //
+        return view('profile.tours.show', compact('tour'), ['pageData' => $this->pageData]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Tour  $tour
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Tour $tour)
     {
-        //
+
+        return view('profile.tours.edit', compact('tour'), ['pageData' => $this->pageData]);
+
     }
 
     /**
@@ -110,21 +114,23 @@ class TourController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Tour  $tour
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Tour $tour)
     {
-        //
+        $tour->update($request->all());
+        return redirect()->route('tours.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Tour  $tour
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Tour $tour)
     {
-        //
+        $tour->delete();
+        return redirect()->route('tours.index');
     }
 }

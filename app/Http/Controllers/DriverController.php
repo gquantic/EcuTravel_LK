@@ -92,11 +92,11 @@ class DriverController extends Controller
      */
     public function update(Request $request, Driver $driver)
     {
-        $request->validate([
-            'name' => 'required',
-            'passport_number' =>'required',
-            'position' => 'required',
-        ]);
+//        $request->validate([
+//            'name' => 'required',
+//            'passport_number' =>'required',
+//            'position' => 'required',
+//        ]);
 
         $driver->update($request->all());
 
