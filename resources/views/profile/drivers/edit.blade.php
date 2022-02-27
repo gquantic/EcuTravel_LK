@@ -20,7 +20,8 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Редактирование данных водителя {{$driver->name}}</h2>
+                        <h2 class="content-header mb-0">Редактирование данных водителя {{$driver->name}}</h2>
+
                     </div>
                 </div>
             </div>
@@ -39,6 +40,7 @@
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
+
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Ф.И.О</label>
                                             <input type="text" class="form-control credit-card-mask" name="name" value="{{$driver->name}}">
@@ -51,7 +53,7 @@
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Паспорт</label>
-                                            <input type="text" class="form-control credit-card-mask" name="passport_number" value="{{ substr($driver->passport_number, 0, 2).'** ****'.substr($driver->passport_number, -2) }}" placeholder="0000 0000 0000 0000" id="credit-card">
+                                            <input type="text" class="form-control credit-card-mask" name="passport_number" value="{{ substr($driver->passport_number, 0, 2).'** ****'.substr($driver->passport_number, -2) }}" >
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Дата поездки</label>
@@ -59,13 +61,21 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label for="">Примечания</label>
-                                            <textarea class="form-control mt-1" name="note_drivers" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <label class="form-label" for="credit-card">Примечание</label>
+                                            <textarea type="text" class="form-control credit-card-mask" name="note_drivers" rows="1"></textarea>
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form-label" for="credit-card">Состояние</label>
+                                            <select name="condition_driver" id="basicSelect" class="form-control">
+                                                <option value="1" @if($driver -> condition_driver == 1) selected @endif>Активно</option>
+                                                <option value="0" @if($driver -> condition_driver == 0) selected @endif>Не активно</option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="col-4">
-                                        <button type="submit" class="btn btn-primary align-content-end">Сохранить изменения</button>
+                                        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
                                     </div>
                                 </div>
                             </form>

@@ -34,13 +34,11 @@
                             @method('POST')
 
                             <div class="form-group mb-1">
-                                <label for="">Тип транспортного средства</label>
-                                <select class="form-control mt-1" name="type_ts" id="objectType">
+                                <label for="basicSelect" >Тип транспортного средства</label>
+                                <select class="form-control mt-1" id="basicSelect" name="type_ts" >
                                     <option value="bus">Автобус</option>
                                     <option value="passenger">Легковой транспорт</option>
                                     <option value="minibus">Микроавтобус</option>
-                                    <option value="">Черная посаженная приора(оперская)</option>
-                                    <option value="">Дядя Мага с пятого поселка на убитой шестерке</option>
                                 </select>
                             </div>
 
@@ -60,14 +58,13 @@
                                 <textarea class="form-control mt-1" name="note_vehicle" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
-                            <div class="form-group mb-1">
-                                <label for="">Состояние</label>
-                                <select name="" id="" class="form-control mt-1">
-                                    <option value="">Активно </option>
-                                    <option value="">Не активно </option>
+                            <div class="form-group mb-1" data-select2-id="45">
+                                <label class="form-label" for="basicSelect">Состояние</label>
+                                <select name="condition_vehicle" id="basicSelect" class="form-select mt-1">
+                                    <option value="1">Активно</option>
+                                    <option value="0">Не активно</option>
                                 </select>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Создать</button>
                         </form>
                     </div>

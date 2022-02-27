@@ -17,7 +17,9 @@ class Tour extends Model
         'arrival_time',
         'departure_date',
         'arrival_date',
+
         'note_tours',
+        'condition_tours'
     ];
 
 }

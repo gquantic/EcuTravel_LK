@@ -15,6 +15,13 @@ class DriverController extends Controller
     {
         $this->pageData = [
             'header' => true,
+
+            'user_id',
+            'name',
+            'passport_number',
+            'position',
+            'note_drivers',
+            'condition_driver',
         ];
     }
 
@@ -55,7 +62,8 @@ class DriverController extends Controller
             'name' => $request->name,
             'passport_number' => $request->passport,
             'position' => $request->position,
-            'note_drivers'=>$request->note_drivers
+            'note_drivers'=>$request->note_drivers,
+            'condition_driver'=>$request->condition_driver
         ]);
 
         return redirect()->route('drivers.index')->with('success', 'Перевозчик успешно добавлен!');

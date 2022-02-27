@@ -49,6 +49,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         'vehicle'=> \App\Http\Controllers\VehicleController::class,
         'tours'=> \App\Http\Controllers\TourController::class,
         'account'=>\App\Http\Controllers\AccountController::class,
+        'stopping'=>\App\Http\Controllers\StoppingController::class,
     ]);
 });
 

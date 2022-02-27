@@ -88,9 +88,9 @@
                         <button class="btn btn-primary w-100" tabindex="4" type="submit">Войти</button>
                     </form>
                     <p class="text-center mt-2"><span>Нет профиля?</span><a href="{{ route('register') }}"><span>&nbsp;Зарегистрируйтесь</span></a></p>
-                    <div class="divider my-2">
-                        <div class="divider-text">или</div>
-                    </div>
+{{--                    <div class="divider my-2">--}}
+{{--                        <div class="divider"></div>--}}
+{{--                    </div>--}}
                     <div class="auth-footer-btn d-flex justify-content-center">
                         <a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a>
                         <a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a>

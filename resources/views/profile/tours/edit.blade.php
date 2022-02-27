@@ -38,30 +38,31 @@
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
+
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Транспорт</label>
                                             <select disabled name="vehicle" class="form-control credit-card-mask">
-{{--                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>--}}
-{{--                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>--}}
-{{--                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>--}}
+                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
+                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
+                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
                                             </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Водитель</label>
-                                            <select disabled name="route_type" class="form-control credit-card-mask">
-{{--                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>--}}
-{{--                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>--}}
-{{--                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>--}}
+                                            <select disabled name="driver" class="form-control credit-card-mask">
+                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
+                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
+                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
                                             </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Маршрут</label>
-                                            <select disabled name="route_type" class="form-control credit-card-mask">
-{{--                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>--}}
-{{--                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>--}}
-{{--                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>--}}
+                                            <select disabled name="routes" class="form-control credit-card-mask">
+                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
+                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
+                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
@@ -90,13 +91,14 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label for="" class="form-label">Состояние</label>
-                                            <select name="" id="" class="form-control ">
-                                                <option value="">Активно</option>
-                                                <option value="">Не активно</option>
+                                            <label for="condition_tours" class="form-label">Состояние</label>
+                                            <select name="condition_tours" id="" class="form-control ">
+                                                <option value="1">Активно</option>
+                                                <option value="0">Не активно</option>
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="col-4">
                                         <button type="submit" class="btn btn-primary">Сохранить изменения</button>
                                     </div>

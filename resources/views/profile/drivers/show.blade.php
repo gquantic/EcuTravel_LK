@@ -56,8 +56,17 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Дата поездки </label>
-                                        <textarea type="text" class="form-control credit-card-mask" value="{{ $driver->note_drivers}}"></textarea>
+                                        <input type="text" class="form-control credit-card-mask" value="{{ $driver->note_drivers}}">
                                     </div>
+
+                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-2" data-select2-id="45">
+                                        <label class="form-label" for="basicSelect">Состояние</label>
+                                        <select disabled name="condition_driver" id="basicSelect" class="form-control credit-card-mask">
+                                            <option value="1" @if($driver -> condition_driver == 1) selected @endif>Активно</option>
+                                            <option value="0" @if($driver -> condition_driver == 0) selected @endif>Не активно</option>
+                                        </select>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

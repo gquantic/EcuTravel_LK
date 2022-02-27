@@ -20,7 +20,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Редактирование данных транспортного средства {{$vehicle->name}}</h2>
+                        <h2 class="content-header float-start mb-0">Редактирование данных транспортного средства {{$vehicle->id}}</h2>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label">Тип транспортного средства</label>
-                                            <select name="route_type" class="form-control credit-card-mask">
+                                            <label class="form">Тип транспортного средства</label>
+                                            <select name="type_ts" class="form-control credit-card-mask mt-1">
                                                 <option value="bus" @if($vehicle->type_ts == 'bus') selected @endif>Автобус</option>
                                                 <option value="passenger" @if($vehicle->type_ts == 'passenger') selected @endif>Легковой транспорт</option>
                                                 <option value="minibus" @if($vehicle->type_ts == 'minibus') selected @endif>Микроавтобус</option>
@@ -49,8 +49,8 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Модель</label>
-                                            <input type="text" class="form-control credit-card-mask @error('model_vehicle') is-invalid @enderror" name="model_vehicle" value="{{$vehicle->model_vehicle}}">
+                                            <label class="form" for="credit-card">Модель</label>
+                                            <input type="text" class="form-control credit-card-mask mt-1 @error('model_vehicle') is-invalid @enderror" name="model_vehicle" value="{{$vehicle->model_vehicle}}">
 
                                             @error('model_vehicle')
                                             <span class="invalid-feedback" role="alert">
@@ -60,13 +60,21 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Регистрационный номер</label>
-                                            <input type="text" class="form-control credit-card-mask" name="gus_number_vehicle" value="{{$vehicle->gus_number_vehicle}}" >
+                                            <label class="form" for="credit-card">Регистрационный номер</label>
+                                            <input type="text" class="form-control credit-card-mask mt-1" name="gus_number_vehicle" value="{{$vehicle->gus_number_vehicle}}" >
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label">Примечания</label>
-                                            <textarea class="form-control" name="note_drivers" id="exampleFormControlTextarea1" placeholder="{{$vehicle->note_vehicle}}" rows="1"></textarea>
+                                            <label class="form">Примечания</label>
+                                            <textarea class="form-control credit-card-mask mt-1" name="note_drivers" id="exampleFormControlTextarea1" placeholder="{{$vehicle->note_vehicle}}" rows="1"></textarea>
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form">Тип транспортного средства</label>
+                                            <select name="condition_vehicle" class="form-control credit-card-mask mt-1">
+                                                <option value="1" @if($vehicle->condition_vehicle == '1') selected @endif>Активно</option>
+                                                <option value="0" @if($vehicle->condition_vehicle == '0') selected @endif>Не активно</option>
+                                            </select>
                                         </div>
                                     </div>
 

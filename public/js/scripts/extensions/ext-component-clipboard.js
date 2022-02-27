@@ -17,7 +17,7 @@ var btnCopy = $('#btn-copy'),
 btnCopy.on('click', function () {
   userText.select();
   document.execCommand('copy');
-  toastr['success']('', 'Copied to clipboard!', {
+  toastr['success']('', 'Скопировано!', {
     rtl: isRtl
   });
 });

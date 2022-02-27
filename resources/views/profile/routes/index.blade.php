@@ -51,6 +51,12 @@
                                         Дата поездки
                                     </th>
 
+                                    <th>
+
+                                    </th>
+                                    <th>
+
+                                    </th>
 {{--                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">--}}
 {{--                                        Адрес прибытия--}}
 {{--                                    </th>--}}
@@ -100,7 +106,16 @@
                                         <td>
                                             {{ $route->arrival_address }}
                                         </td>
-
+                                        <td>
+                                            @switch($route->condition_routes)
+                                                @case('1')
+                                                <span class="badge rounded-pill badge-glow bg-success">Активно</span>
+                                                @break
+                                                @case('0')
+                                                <span class="badge rounded-pill badge-glow bg-danger">Не активно</span>
+                                                @break
+                                            @endswitch
+                                        </td>
                                         <td style="width: 15px">
                                             <div class="col-2" style="display: flex">
                                                 <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect">
@@ -120,25 +135,6 @@
                                                 </form>
                                             </div>
                                         </td>
-{{--                                        <td>--}}
-{{--                                            {{ $route->arrival_address }}--}}
-{{--                                        </td>--}}
-{{--                                        <td>--}}
-{{--                                            {{ $route->note_routes }}--}}
-{{--                                        </td>--}}
-
-{{--                                        <td>--}}
-{{--                                            {{ $route->basic_price}}--}}
-{{--                                        </td>--}}
-
-{{--                                        <td>--}}
-{{--                                            {{ $route->child_price }}--}}
-{{--                                        </td>--}}
-
-{{--                                        <td>--}}
-{{--                                            {{ $route->bag_price }}--}}
-{{--                                        </td>--}}
-
                                     </tr>
                                 @endforeach
                                 </tbody>

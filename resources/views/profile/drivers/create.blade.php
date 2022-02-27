@@ -30,7 +30,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Серия и номер паспорта</label>
-                                <input type="text" name="passport" class="form-control mt-1">
+                                <input type="number" name="passport" class="form-control mt-1">
                             </div>
 
                             <div class="form-group mb-1">
@@ -43,11 +43,11 @@
                                 <textarea class="form-control mt-1" name="note_drivers" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
-                            <div class="form-group mb-1">
-                                <label for="">Состояние</label>
-                                <select name="" id="" class="form-control mt-1">
-                                    <option value="">Активно</option>
-                                    <option value="">Не активно</option>
+                            <div class="form-group mb-1" data-select2-id="45">
+                                <label class="form-label" for="basicSelect">Состояние</label>
+                                <select name="condition_driver" id="basicSelect" class="form-select mt-1">
+                                    <option value="1">Активно</option>
+                                    <option value="0">Не активно</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Создать</button>
@@ -57,19 +57,4 @@
             </div>
         </div>
     </section>
-@endsection
-
-@section('post-meta')
-    <script>
-        $(document).ready(function () {
-            $('#objectType').on('input', function () {
-               let newType = $(this).val();
-               if (newType === 'bus') {
-                   $('#gosNumber').removeClass('hidden');
-               } else {
-                   $('#gosNumber').addClass('hidden');
-               }
-            });
-        });
-    </script>
 @endsection

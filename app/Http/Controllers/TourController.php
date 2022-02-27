@@ -19,7 +19,7 @@ class TourController extends Controller
     public function __construct()
     {
         $this->pageData = [
-            'header' => true,
+            'header' => true
         ];
     }
 
@@ -30,10 +30,16 @@ class TourController extends Controller
      */
     public function index()
     {
-         $tours = Tour::all();
+        $drivers = Driver::all();
+        $vehicles = Vehicle::all();
+        $routes = Route::all();
+        $tours = Tour::all();
          return view('profile.tours.index', [
              'pageData' => $this->pageData,
              'tours' => $tours,
+             'drivers' =>$drivers,
+             'vehicles' =>$vehicles,
+             'routes'=> $routes
          ]);
     }
 
@@ -60,13 +66,14 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'driver' => 'required',
-            'depart_time' => 'required',
-            'arrival_time' => 'required',
-            'departure_date' => 'required',
-            'arrival_date' => 'required',
-        ]);
+//        $request->validate([
+//            'driver' => 'required',
+//            'depart_time' => 'required',
+//            'arrival_time' => 'required',
+//            'departure_date' => 'required',
+//            'arrival_date' => 'required',
+//        ]);
+
 
         $tour = new Tour([
             'user' => \Auth::id(),
@@ -79,7 +86,8 @@ class TourController extends Controller
 
             'departure_date' => $request->get('departure_date'),
             'arrival_date' => $request->get('arrival_date'),
-            'note_tours' => $request->get('note_tours')
+            'note_tours' => $request->get('note_tours'),
+            'condition_tours' => $request->get('condition_tours')
         ]);
         $tour->save();
         return redirect()->route('tours.index');

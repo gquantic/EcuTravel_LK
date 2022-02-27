@@ -9,11 +9,14 @@
     <link rel="apple-touch-icon" href="{{asset('images/ico/favicon-32x32.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/ico/favicon.ico')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('vendors/css/extensions/toastr.min.css')}}">
+
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/overrides.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/core.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/base/core/menu/menu-types/vertical-menu.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/css/forms/spinner/jquery.bootstrap-touchspin.css') }}">
+
     <link rel="stylesheet" href="{{ asset('css/base/plugins/extensions/ext-component-toastr.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/feather/iconfont.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flag-icon-css/css/flag-icon.css') }}">
@@ -54,6 +57,8 @@
 
     <script src="{{ asset('vendors/js/vendors.min.js') }}"></script>
     <script src="{{ asset('vendors/js/forms/spinner/jquery.bootstrap-touchspin.js') }}"></script>
+    <script src="{{asset('vendors/js/extensions/toastr.min.js')}}"></script>
+    <script src="{{asset('js/scripts/extensions/ext-component-clipboard.js')}}"></script>
 
 
     <script src="{{ asset('js/core/app-menu.js') }}"></script>
@@ -69,8 +74,19 @@
             }
 
             $('body').removeClass('menu-collapsed');
+
+            /** Выделение ссылки */
+            let navItems = $(".navigation-main li");
+
+            $.each(navItems, function (index, value) {
+                let link = $(value).find('a');
+                if (window.location.href === link.attr('href')) {
+                    $(value).addClass('active');
+                }
+            });
         });
-                /** ИСЧЕЗНОВЕНИЕ ВАЛИДАЦИИ **/
+
+        /** ИСЧЕЗНОВЕНИЕ ВАЛИДАЦИИ **/
         $(function (){
             $('.invalid-feedback').fadeOut(3000);
         });

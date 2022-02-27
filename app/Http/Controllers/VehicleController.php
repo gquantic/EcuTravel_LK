@@ -66,6 +66,7 @@ class VehicleController extends Controller
             'gus_number_vehicle'=> $request->gus_number_vehicle,
             'model_vehicle'=> $request->model_vehicle,
             'note_vehicle'=> $request->note_vehicle,
+            'condition_vehicle'=> $request->condition_vehicle,
 
         ]);
 
@@ -105,9 +106,10 @@ class VehicleController extends Controller
      */
     public function update(Request $request, Vehicle $vehicle)
     {
-        $request->validate([
-            'model_vehicle'=>'required',
-        ]);
+//        $request->validate([
+//            'model_vehicle'=>'required',
+//        ]);
+
         $vehicle->update($request->all());
 
         return redirect()->route('vehicle.index');

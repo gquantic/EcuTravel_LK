@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Редактирование данных о маршруте {{$route->number_routes}}</h2>
+                        <h2 class="content-header float-start mb-0">Редактирование данных о маршруте | {{$route->number_routes}}</h2>
                     </div>
                 </div>
             </div>
@@ -84,10 +84,9 @@
                                             <label class="form-label" for="credit-card">Стоимость багажа</label>
                                             <input type="text" class="form-control" name="bag_price" value="{{$route->bag_price}}">
                                         </div>
-
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Примечания</label>
-                                            <textarea type="text" class="form-control" name="note_routes" placeholder="{{$route->note_routes}}"></textarea>
+                                            <textarea type="text" class="form-control" name="note_routes" rows="1" placeholder="{{$route->note_routes}}"></textarea>
                                         </div>
 
                                     </div>

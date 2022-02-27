@@ -1,5 +1,5 @@
 <!-- Top Header Begin -->
-<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-dark navbar-shadow container-xxl">
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
             <ul class="nav navbar-nav d-xl-none">
@@ -158,7 +158,7 @@
 
 
 <!-- Main Menu Begin -->
-<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header expanded">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto"><a class="navbar-brand" href="/"><span class="brand-logo">
@@ -205,12 +205,12 @@
             <li class="navigation-header text-truncate">
                 <span>Справочники</span>
             </li>
-            <li class="nav-item">
-                <a class="d-flex align-items-center" href="/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <span class="menu-title text-truncate" data-i18n="Email">Экипажи</span>
-                </a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="d-flex align-items-center" href="/">--}}
+{{--                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>--}}
+{{--                    <span class="menu-title text-truncate" data-i18n="Email">Экипажи</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             <li class="nav-item">
                 <a class="d-flex align-items-center" href="{{ route('drivers.index') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -218,13 +218,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="d-flex align-items-center" href="{{ route('vehicle.index') }}">
+                <a class="d-flex align-items-center " href="{{ route('vehicle.index') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Транспортные средства</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="d-flex align-items-center" href="/">
+                <a class="d-flex align-items-center" href="{{route('stopping.index')}}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Остановочные пункты</span>
                 </a>
@@ -252,3 +252,12 @@
         </ul>
     </div>
 </div>
+<script>
+    $(document).ready( function(){
+        $(".navigation navigation-main").click( function(){
+            $(".navigation navigation-main li a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+

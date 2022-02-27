@@ -74,6 +74,7 @@ class RouteController extends Controller
             'child_price' => $request->child_price,
             'bag_price' => $request->bag_price,
             'note_routes' => $request->note_routes,
+            'condition_routes'=>$request->condition_routes
         ]);
 
         return redirect()->route('routes.index');

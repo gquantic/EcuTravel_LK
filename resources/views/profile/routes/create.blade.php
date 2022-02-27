@@ -121,9 +121,9 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Состояние</label>
-                                <select name="" id="" class="form-control mt-1">
-                                    <option value="">Активно</option>
-                                    <option value="">Не активно</option>
+                                <select name="condition_routes" id="" class="form-control mt-1">
+                                    <option value="1">Активно</option>
+                                    <option value="0">Не активно</option>
                                 </select>
                             </div>
 
