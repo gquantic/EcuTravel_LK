@@ -45,23 +45,20 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Станция отправления</label>
-                                <input type="text" name="depart_station" class="form-control mt-1 @error('depart_station') is-invalid @enderror" >
-
-                                @error('depart_station')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                <select name="depart_station" id="" class="form-control mt-1">
+                                    @foreach($stoppings as $stopping)
+                                        <option value=" {{ $stopping->id }}">  {{ $stopping->address }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Адрес отправления</label>
-                                <input type="text" name="departure_address" class="form-control mt-1 @error('departure_address') is-invalid @enderror">
-                                @error('departure_address')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                <select name="departure_address" id="" class="form-control mt-1">
+                                    @foreach($stoppings as $stopping)
+                                        <option value=" {{ $stopping->id }}">  {{ $stopping->name_of_the_stop_point }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group mb-1">
@@ -85,7 +82,7 @@
                             </div>
 
                             <div class="form-group mb-1">
-                                <label for="">Базовая стоимость багажа</label>
+                                <label for="">Базовая стоимость билета</label>
                                 <input type="number" name="basic_price" class="form-control mt-1 @error('basic_price') is-invalid @enderror">
                                 @error('basic_price')
                                 <span class="invalid-feedback" role="alert">

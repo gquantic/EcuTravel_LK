@@ -49,54 +49,39 @@
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountFirstName">Наименование организации</label>
-                                    <input type="text" class="form-control" id="accountFirstName" name="firstName" value="" data-msg="" placeholder="{{Auth::user()->name}}">
+                                    <input type="text" class="form-control" id="accountFirstName" name="firstName" value="" data-msg="" >
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountPhoneNumber">Фирменное наименование</label>
-                                    <input type="tel" class="form-control account-number-mask" id="accountPhoneNumber" name="phoneNumber" placeholder="Бренд" value="">
+                                    <label class="form-label" for="accountPhoneNumber">БИК банка</label>
+                                    <input type="tel" class="form-control account-number-mask" id="accountPhoneNumber" name="phoneNumber"  value="">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountEmail">Юридический адрес</label>
-                                    <input type="email" class="form-control" id="accountEmail" name="email" placeholder="Индекс, Город, Улица, номер дома, номер офиса">
+                                    <label class="form-label" for="accountEmail">Фирменное наименование</label>
+                                    <input type="email" class="form-control" id="accountEmail" name="email" placeholder="Бренд">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountOrganization">Почтовый адрес</label>
-                                    <input type="text" class="form-control" id="accountOrganization" name="organization" placeholder="Индекс, Город, Улица, номер дома, номер офиса" value="" aria-invalid="false">
+                                    <label class="form-label" for="accountOrganization">Кор/ счет</label>
+                                    <input type="text" class="form-control" id="accountOrganization" name="organization"  value="" aria-invalid="false">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountPhoneNumber">ИНН</label>
+                                    <label class="form-label" for="accountPhoneNumber">Юридический адрес</label>
                                     <input type="text" class="form-control account-number-mask" id="accountPhoneNumber" name="phoneNumber" value="">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountAddress">ОГРН</label>
+                                    <label class="form-label" for="accountAddress">Расчётный счет</label>
                                     <input type="text" class="form-control" id="accountAddress" name="address">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountState">КПП</label>
-                                    <input type="text" class="form-control" id="accountState" name="state" >
+                                    <label class="form-label" for="accountState">Почтовый адрес</label>
+                                    <input type="text" class="form-control" id="accountState" name="state" placeholder="Индекс, Город, Улица, номер дома, номер офиса" >
                                 </div>
-                                <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountZipCode">Наименование банка</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
-                                </div>
-                                <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountZipCode">БИК Банка</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
-                                </div>
-
-                                <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountZipCode">Кор/ счет</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
-                                </div>
-
-                                <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountZipCode">Расчётный счет</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
-                                </div>
-
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">ФИО контактного лица</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode" placeholder="ФИО полностью" maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  placeholder="ФИО полностью" maxlength="6">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">ИНН</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
@@ -105,18 +90,33 @@
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountZipCode">Телефон организации</label>
+                                    <label class="form-label" for="accountZipCode">ОГРН</label>
                                     <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
-                                    <label class="form-label" for="accountZipCode">Телефон контактного лица.</label>
+                                    <label class="form-label" for="accountZipCode">Телефон организации</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode" placeholder="ФИО полностью" maxlength="6">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">КПП</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">Телефон контактного лица</label>
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-1">
+                                    <label class="form-label" for="accountZipCode">Наименование банка</label>
                                     <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
                                 </div>
 
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary mt-1 me-1 waves-effect waves-float waves-light">Сохранить изменения</button>
-{{--                                    <button type="reset" class="btn btn-outline-secondary mt-1 waves-effect">Вернуть изменения</button>--}}
+                                    {{--                                    <button type="reset" class="btn btn-outline-secondary mt-1 waves-effect">Вернуть изменения</button>--}}
                                 </div>
                             </div>
                         </form>

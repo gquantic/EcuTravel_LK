@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Driver;
 use App\Models\Route;
+use App\Models\Stopping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +27,7 @@ class RouteController extends Controller
         return view('profile.routes.index', [
             'pageData' => $this->pageData,
             'routes' => Route::all(),
+            'stoppings'=>Stopping::all(),
 //            'routes' => Db::table('routes')->paginate(15)
         ]);
     }
@@ -40,6 +42,7 @@ class RouteController extends Controller
         return view('profile.routes.create', [
             'pageData' => $this->pageData,
             'drivers' => Driver::all(),
+            'stoppings'=>Stopping::all(),
         ]);
     }
 
