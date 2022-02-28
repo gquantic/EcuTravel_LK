@@ -47,7 +47,7 @@
                                 <label for="">Станция отправления</label>
                                 <select name="depart_station" id="" class="form-control mt-1">
                                     @foreach($stoppings as $stopping)
-                                        <option value=" {{ $stopping->id }}">  {{ $stopping->address }}</option>
+                                        <option value=" {{ $stopping->id }}">  {{ $stopping->name_of_the_stop_point }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -56,7 +56,7 @@
                                 <label for="">Адрес отправления</label>
                                 <select name="departure_address" id="" class="form-control mt-1">
                                     @foreach($stoppings as $stopping)
-                                        <option value=" {{ $stopping->id }}">  {{ $stopping->name_of_the_stop_point }}</option>
+                                        <option value=" {{ $stopping->id }}">  {{ $stopping->address }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -85,9 +85,9 @@
                                 <label for="">Базовая стоимость билета</label>
                                 <input type="number" name="basic_price" class="form-control mt-1 @error('basic_price') is-invalid @enderror">
                                 @error('basic_price')
-                                <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
 

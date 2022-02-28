@@ -31,18 +31,27 @@ class AccountController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+       $account = new Account([
+           'logo'=> $request->get('logo'),
+       ]);
+
+        if ($request->hasFile('logo'))  {
+            $account->logo = $request->file('logo')->store('logo', 'public');
+        }
+
+        $account->save();
+        return redirect('')->route('account.index')->with('success', 'Сотрудник успешно добавлен !');
     }
 
     /**

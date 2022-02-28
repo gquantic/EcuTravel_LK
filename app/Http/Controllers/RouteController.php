@@ -42,7 +42,7 @@ class RouteController extends Controller
         return view('profile.routes.create', [
             'pageData' => $this->pageData,
             'drivers' => Driver::all(),
-            'stoppings'=>Stopping::all(),
+            'stoppings'=> Stopping::all(),
         ]);
     }
 

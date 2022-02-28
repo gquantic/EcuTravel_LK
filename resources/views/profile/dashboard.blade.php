@@ -22,7 +22,9 @@
                         <div class="text-left">
                             <h3 class="fw-bolder mb-75">4,567</h3>
                             <span>{{Auth::user()->name}} </span>
-                            <h6 class="mt-2"><a class="btn-flat-danger" href="{{ route('account.index') }}">Перейти в профиль</a></h6>
+                            <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect">
+                                <a href="{{ route('account.index')}}"><svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="tooltip" data-bs-original-title="Перейти в профиль..." width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                            </button>
                         </div>
                         <div class="align-items-center p-50">
                             <span class="avatar-content">

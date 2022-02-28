@@ -27,7 +27,7 @@
                         <!-- header section -->
                         <div class="d-flex">
                             <a href="#" class="me-25">
-                                <img src="{{asset('images\slider\05.jpg')}}" id="account-upload-img" class="uploadedAvatar rounded me-50" alt="profile image" height="100" width="100">
+                                <img src="{{asset('/storage/' .$account->logo)}}" id="account-upload-img" class="uploadedAvatar rounded me-50" alt="profile image" height="100" width="100">
                             </a>
                             <!-- upload and reset button -->
                             <div class="d-flex align-items-end mt-75 ms-1">
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountOrganization">Кор/ счет</label>
-                                    <input type="text" class="form-control" id="accountOrganization" name="organization"  value="" aria-invalid="false">
+                                    <input type="text" class="form-control" id="accountOrganization" name="organization"  value="" aria-invalid="false" maxlength="20">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountPhoneNumber">Юридический адрес</label>
@@ -77,41 +77,41 @@
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">ФИО контактного лица</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  placeholder="ФИО полностью" maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  placeholder="ФИО полностью" maxlength="50">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">ИНН</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                    <input type="text" class="form-control" required name="" min="3" maxlength="12">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">E-mail контактного лица</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                    <input type="email" class="form-control" >
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">ОГРН</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" maxlength="15">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">Телефон организации</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode" placeholder="ФИО полностью" maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode" placeholder="ФИО полностью" maxlength="15">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">КПП</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="9">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">Телефон контактного лица</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="15">
                                 </div>
 
                                 <div class="col-12 col-sm-6 mb-1">
                                     <label class="form-label" for="accountZipCode">Наименование банка</label>
-                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="6">
+                                    <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="50">
                                 </div>
 
                                 <div class="col-12">

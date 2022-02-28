@@ -27,14 +27,25 @@
                                 <label for="">Транспорт</label>
                                 <select name="vehicle" id="" class="form-control mt-1">
                                     @foreach($vehicles as $vehicle)
-                                        <option value="{{ $vehicle->id}}">{{"$vehicle->type_ts [{$vehicle->gus_number_vehicle}]"}}</option>
+                                        <option value="{{ $vehicle->id}}">@switch($vehicle->type_ts)
+                                                @case('passenger')
+                                                Легковой транспорт
+                                                @break
+                                                @case('bus')
+                                                Автобус
+                                                @break
+                                                @case('minibus')
+                                                Микроавтобус
+                                                @break
+                                            @endswitch
+                                            {{"[{$vehicle->gus_number_vehicle}]"}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Водитель</label>
-                                <select name="drivers" id="" class="form-control mt-1 select2 select2-selection--multiple" multiple>
+                                <select name="drivers" id="" class="form-control mt-1">
                                     @foreach($drivers as $driver)
                                         <option value="{{ $driver->id }}">{{ $driver->name }}</option>
                                     @endforeach
