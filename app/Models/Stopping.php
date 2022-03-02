@@ -15,5 +15,6 @@ class Stopping extends Model
         'address',
         'note_stopping',
         'condition_stopping',
+
     ];
 }

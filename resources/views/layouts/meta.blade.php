@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('fonts/feather/iconfont.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flag-icon-css/css/flag-icon.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/base/plugins/forms/form-validation.css"') }}">
+    <link rel="stylesheet" href="{{ asset('/css/base/plugins/extensions/ext-component-sweet-alerts.css"') }}">
 
     <script src="{{ asset('vendors/js/jquery/jquery.min.js') }}"></script>
 
@@ -59,6 +61,7 @@
     <script src="{{ asset('vendors/js/forms/spinner/jquery.bootstrap-touchspin.js') }}"></script>
     <script src="{{asset('vendors/js/extensions/toastr.min.js')}}"></script>
     <script src="{{asset('js/scripts/extensions/ext-component-clipboard.js')}}"></script>
+    <script src="{{asset('js/scripts/pages/page-account-settings-account.js')}}"></script>
 
 
     <script src="{{ asset('js/core/app-menu.js') }}"></script>

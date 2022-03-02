@@ -16,25 +16,28 @@
 @section('content')
     <section id="dashboard-analytics">
         <div class="row">
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-lg-3 col-sm-6">
                 <div class="card">
-                    <div class="card-body d-flex  justify-content-between">
-                        <div class="text-left">
-                            <h3 class="fw-bolder mb-75">4,567</h3>
-                            <span>{{Auth::user()->name}} </span>
-                            <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect">
-                                <a href="{{ route('account.index')}}"><svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="tooltip" data-bs-original-title="Перейти в профиль..." width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
-                            </button>
-                        </div>
-                        <div class="align-items-center p-50">
-                            <span class="avatar-content">
-                                <img src="{{asset('images\slider\05.jpg')}}" class=" rounded me-50" alt="profile image" height="75" width="75">
-                            </span>
+                    <div class="card-body">
+                        <div class="card-body text-center">
+                            <div class="author-info">
+                                <div class="mb-75">
+                                    <img class="rounded-3" src="{{asset('images/slider/05.jpg')}}" width="100" height="100" alt="logo">
+                                </div>
+                                <h6 class="fw-bolder mb-25">OOO "Кактус"
+                                    <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect">
+                                        <a href="{{ route('account.index')}}"><svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="tooltip" data-bs-original-title="Перейти в профиль..." width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                                    </button>
+                                </h6>
+
+                                <p class="card-text text-center">"Бренд"</p>
+                                <p class="card-text">какой то текст</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-6">
+            <div class="col-lg-9 col-md-6">
                 <div class="card invoice-list-wrapper">
                     <div class="card-datatable table-responsive">
                         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">

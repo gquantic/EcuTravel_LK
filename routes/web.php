@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -35,8 +36,10 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         ]);
     });
 
-    /** PROFILE **/
-//    Route::get('/profile');
+                    /** ФИНАНСЫ **/
+    Route::get('finance/soon', function () use ($pageData) {
+        return view('profile.finance.soon', compact('pageData'));
+    })->name('soon');
 
     Route::get('/reference', function () use ($pageData) {
         return view('profile.reference', compact('pageData'));
