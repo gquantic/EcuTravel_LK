@@ -26,6 +26,8 @@ class CreateVehiclesTable extends Migration
 
             $table->string('condition_vehicle');
 
+            $table->string('number_of_seats')->nullable();
+
 
             $table->timestamps();
         });

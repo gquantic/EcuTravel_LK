@@ -23,5 +23,6 @@ class Vehicle extends Model
         'model_vehicle',
         'note_vehicle',
         'condition_vehicle',
+        'number_of_seats',
     ];
 }

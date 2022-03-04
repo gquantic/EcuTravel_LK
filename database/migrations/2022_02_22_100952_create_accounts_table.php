@@ -17,6 +17,7 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('logo')->nullable();
+            $table->string('brand')->nullable();
         });
     }
 

@@ -63,7 +63,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Время отправки</label>
-                                <input type="time" name="depart_time" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
+                                <input type="time"  name="depart_time" id="datetimepicker" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
 
                                 @error('depart_time')
                                 <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Время прибытия</label>
-                                <input type="time" name="arrival_time" class="form-control mt-1 @error('arrival_time') is-invalid @enderror">
+                                <input type="time" name="arrival_time" id="datetimepicker" class="form-control mt-1 @error('arrival_time') is-invalid @enderror">
 
                                 @error('arrival_time')
                                     <span class="invalid-feedback" role="alert">
@@ -83,9 +83,9 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group mb-1">
+                            <div class="form-group mb-1 relative">
                                 <label for="">Дата отправления</label>
-                                <input type="datetime-local" name="departure_date" class="form-control mt-1 @error('departure_date') is-invalid @enderror">
+                                <input type="date" name="departure_date" id="datetimepicker" class="form-control mt-1 @error('departure_date') is-invalid @enderror">
 
                                 @error('departure_date')
                                     <span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Дата прибытия</label>
-                                <input type="datetime-local" name="arrival_date" class="form-control mt-1 @error('arrival_date') is-invalid @enderror">
+                                <input type="date" name="arrival_date" id="datetimepicker" class="form-control mt-1 @error('arrival_date') is-invalid @enderror">
 
                                 @error('arrival_date')
                                 <span class="invalid-feedback" role="alert">
@@ -124,6 +124,52 @@
             </div>
         </div>
     </section>
+    <style>
+
+        input[type="date"] {
+            position: relative;
+        }
+
+        input[type="time"] {
+            position: relative;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            color: transparent;
+            background: transparent;
+        }
+
+        input[type="time"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            color: transparent;
+            background: transparent;
+        }
+
+        input[type="date"]::-webkit-inner-spin-button,
+        input[type="date"]::-webkit-clear-button {
+            z-index: 1;
+        }
+
+
+        input[type="time"]::-webkit-inner-spin-button,
+        input[type="time"]::-webkit-clear-button {
+            z-index: 1;
+        }
+
+    </style>
 @endsection
 
 @section('post-meta')

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/dashboard/');
+Route::redirect('/home', '/dashboard/');
 
 /**
  * Routes for dashboard pages
@@ -29,7 +29,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         ],
     ];
 
-    Route::get('/', function () use ($pageData) {
+    Route::get('/home', function () use ($pageData) {
         return view('profile.dashboard', [
             'pageData' => $pageData,
 //            'tours' => \App\Models\Tour::all(),
@@ -56,8 +56,4 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     ]);
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::redirect('home', '/dashboard/');

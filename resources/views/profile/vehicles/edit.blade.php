@@ -65,6 +65,11 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form" for="credit-card">Количество посадочных мест</label>
+                                            <input type="text" class="form-control credit-card-mask mt-1" name="number_of_seats" value="{{$vehicle->number_of_seats}}" >
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form">Примечания</label>
                                             <textarea class="form-control credit-card-mask mt-1" name="note_drivers" id="exampleFormControlTextarea1" placeholder="{{$vehicle->note_vehicle}}" rows="1"></textarea>
                                         </div>

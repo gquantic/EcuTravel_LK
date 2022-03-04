@@ -5,109 +5,20 @@
             <ul class="nav navbar-nav d-xl-none">
                 <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
             </ul>
-            <ul class="nav navbar-nav bookmark-icons">
-                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
-                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
-                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
-                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
-                    <div class="bookmark-input search-input">
-                        <div class="bookmark-input-icon"><i data-feather="search"></i></div>
-                        <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
-                        <ul class="search-list search-list-bookmark"></ul>
-                    </div>
-                </li>
-            </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
-            <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+            <li class="nav-item dropdown dropdown-language">
+                <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-ru"></i>
+                    <span class="selected-language">Русский</span>
+                </a>
+{{--                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">--}}
+{{--                    <a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i>English</a>--}}
+{{--                    <a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a>--}}
+{{--                    <a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a>--}}
+{{--                    <a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a>--}}
+{{--                </div>--}}
             </li>
-            <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
-            <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
-                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
-                    <li class="dropdown-menu-header">
-                        <div class="dropdown-header d-flex">
-                            <h4 class="notification-title mb-0 me-auto">Notifications</h4>
-                            <div class="badge rounded-pill badge-light-primary">6 New</div>
-                        </div>
-                    </li>
-                    <li class="scrollable-container media-list"><a class="d-flex" href="#">
-                            <div class="list-item d-flex align-items-start">
-                                <div class="me-1">
-                                    <div class="avatar"><img src="/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
-                                </div>
-                                <div class="list-item-body flex-grow-1">
-                                    <p class="media-heading"><span class="fw-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
-                                </div>
-                            </div>
-                        </a><a class="d-flex" href="#">
-                            <div class="list-item d-flex align-items-start">
-                                <div class="me-1">
-                                    <div class="avatar"><img src="/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
-                                </div>
-                                <div class="list-item-body flex-grow-1">
-                                    <p class="media-heading"><span class="fw-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
-                                </div>
-                            </div>
-                        </a><a class="d-flex" href="#">
-                            <div class="list-item d-flex align-items-start">
-                                <div class="me-1">
-                                    <div class="avatar bg-light-danger">
-                                        <div class="avatar-content">MD</div>
-                                    </div>
-                                </div>
-                                <div class="list-item-body flex-grow-1">
-                                    <p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="list-item d-flex align-items-center">
-                            <h6 class="fw-bolder me-auto mb-0">System Notifications</h6>
-                            <div class="form-check form-check-primary form-switch">
-                                <input class="form-check-input" id="systemNotification" type="checkbox" checked="">
-                                <label class="form-check-label" for="systemNotification"></label>
-                            </div>
-                        </div><a class="d-flex" href="#">
-                            <div class="list-item d-flex align-items-start">
-                                <div class="me-1">
-                                    <div class="avatar bg-light-danger">
-                                        <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
-                                    </div>
-                                </div>
-                                <div class="list-item-body flex-grow-1">
-                                    <p class="media-heading"><span class="fw-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to high CPU usage</small>
-                                </div>
-                            </div>
-                        </a><a class="d-flex" href="#">
-                            <div class="list-item d-flex align-items-start">
-                                <div class="me-1">
-                                    <div class="avatar bg-light-success">
-                                        <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
-                                    </div>
-                                </div>
-                                <div class="list-item-body flex-grow-1">
-                                    <p class="media-heading"><span class="fw-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
-                                </div>
-                            </div>
-                        </a><a class="d-flex" href="#">
-                            <div class="list-item d-flex align-items-start">
-                                <div class="me-1">
-                                    <div class="avatar bg-light-warning">
-                                        <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
-                                    </div>
-                                </div>
-                                <div class="list-item-body flex-grow-1">
-                                    <p class="media-heading"><span class="fw-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
-                </ul>
-            </li>
+{{--            <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>--}}
             <li class="nav-item dropdown dropdown-user ">
                 <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none">
@@ -161,7 +72,8 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header expanded">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="/"><span class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="/">
+                    <span class="brand-logo">
                             <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                                 <defs>
                                     <linearGradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -184,9 +96,11 @@
                                         </g>
                                     </g>
                                 </g>
-                            </svg></span>
+                            </svg>
+                    </span>
                     <h2 class="brand-text">EcuTravel</h2>
-                </a></li>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
@@ -248,28 +162,28 @@
 
             <li class="nav-item">
                 <a class="d-flex align-items-center" href="{{ route('soon') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Билеты</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="d-flex align-items-center" href="{{ route('soon') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-plus"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Заказы</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="d-flex align-items-center" href="{{ route('soon') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Отчет по продажам</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="d-flex align-items-center" href="{{ route('soon') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                     <span class="menu-title text-truncate" data-i18n="Email">Отчёт по брони</span>
                 </a>
             </li>

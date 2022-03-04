@@ -11,5 +11,6 @@ class Account extends Model
 
     protected $fillable = [
         'logo',
+        'brand'
     ];
 }

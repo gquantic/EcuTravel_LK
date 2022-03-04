@@ -45,16 +45,16 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Станция отправления</label>
-                                <select name="depart_station" id="" class="form-control mt-1">
+                                <select type="text" name="depart_station"  id="" class="form-control mt-1">
                                     @foreach($stoppings as $stopping)
-                                        <option value=" {{ $stopping->id }}">  {{ $stopping->name_of_the_stop_point }}</option>
+                                        <option value="{{ $stopping->id }}">{{ $stopping->name_of_the_stop_point }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Адрес отправления</label>
-                                <select name="departure_address" id="" class="form-control mt-1">
+                                <select type="text" name="departure_address" id="" class="form-control mt-1">
                                     @foreach($stoppings as $stopping)
                                         <option value=" {{ $stopping->id }}">  {{ $stopping->address }}</option>
                                     @endforeach
@@ -63,7 +63,12 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Станция прибытия</label>
-                                <input type="text" name="arrival_station" class="form-control mt-1 @error('arrival_station') is-invalid @enderror">
+                                <select type="text"  name="arrival_station" class="form-control mt-1 @error('arrival_station') is-invalid @enderror">
+                                @foreach($stoppings as $stopping)
+                                    <option value=" {{ $stopping->id }} ">  {{ $stopping->name_of_the_stop_point }} </option>
+                                @endforeach
+                                </select>
+
                                 @error('arrival_station')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -73,7 +78,12 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Адрес прибытия</label>
-                                <input type="text" name="arrival_address" class="form-control mt-1 @error('arrival_address') is-invalid @enderror">
+                                <select type="text" name="arrival_address" class="form-control mt-1 @error('arrival_address') is-invalid @enderror">
+                                    @foreach($stoppings as $stopping)
+                                        <option value="{{ $stopping->id }}">{{ $stopping->name_of_the_stop_point }}</option>
+                                    @endforeach
+                                </select>
+
                                 @error('arrival_address')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

@@ -44,6 +44,9 @@
                                         Рег.номер
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Total: activate to sort column ascending">
+                                        Посадочных мест
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Total: activate to sort column ascending">
 
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Total: activate to sort column ascending">
@@ -76,6 +79,9 @@
                                         </td>
                                         <td>
                                             {{ $vehicle->gus_number_vehicle }}
+                                        </td>
+                                        <td>
+                                            {{$vehicle->number_of_seats}}
                                         </td>
                                         <td>
                                             @switch($vehicle->condition_vehicle)

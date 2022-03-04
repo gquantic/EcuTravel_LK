@@ -16,5 +16,6 @@ class Driver extends Model
         'position',
         'note_drivers',
         'condition_driver',
+        'number_of_seats',
     ];
 }

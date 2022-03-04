@@ -35,7 +35,7 @@ class AccountController extends Controller
      */
     public function create()
     {
-        return view('profile.account.create',['pageData' => $this->pageData, 'account'=>Account::all()]);
+        return view('profile.account.create',['pageData' => $this->pageData]);
     }
 
     /**
@@ -48,10 +48,11 @@ class AccountController extends Controller
     {
        $account = new Account([
            'logo'=> $request->file('logo'),
+           'brand'=> $request->get('brand'),
        ]);
 
         if ($request->hasFile('logo'))  {
-            $account-> logo = $request->file('logo')->store('logo', 'public');
+            $account->logo = $request->file('logo')->store('logo', 'public');
         }
 
 

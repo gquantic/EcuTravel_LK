@@ -16,147 +16,137 @@
 @section('content')
     <section id="dashboard-analytics">
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card card-profile">
+                    <img src="{{asset('images/banner/banner-12.jpg')}}" class="img-fluid card-img-top" alt="Profile Cover Photo">
+                    <div class="card-body">
+                        <div class="profile-image-wrapper">
+                            <div class="profile-image">
+                                <div class="avatar">
+                                    <img src="{{asset('images/portrait/small/avatar-s-9.jpg')}}" alt="Profile Picture">
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Curtis Stone</h3>
+                        <h6 class="text-muted">Malaysia</h6>
+                        <span class="badge badge-light-primary profile-badge">Pro Level</span>
+                        <hr class="mb-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-muted fw-bolder">Followers</h6>
+                                <h3 class="mb-0">10.3k</h3>
+                            </div>
+                            <div>
+                                <h6 class="text-muted fw-bolder">Projects</h6>
+                                <h3 class="mb-0">156</h3>
+                            </div>
+                            <div>
+                                <h6 class="text-muted fw-bolder">Rank</h6>
+                                <h3 class="mb-0">23</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="card-body text-center">
-                            <div class="author-info">
-                                <div class="mb-75">
-                                    <img class="rounded-3" src="{{asset('images/slider/05.jpg')}}" width="100" height="100" alt="logo">
-                                </div>
-                                <h6 class="fw-bolder mb-25">OOO "Кактус"
-                                    <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect">
-                                        <a href="{{ route('account.index')}}"><svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="tooltip" data-bs-original-title="Перейти в профиль..." width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
-                                    </button>
-                                </h6>
-
-                                <p class="card-text text-center">"Бренд"</p>
-                                <p class="card-text">какой то текст</p>
+                    <div class="card-header d-flex justify-content-between align-items-start">
+                        <div>
+                            <h4 class="card-title">Sales</h4>
+                            <p class="card-text">Last 6 months</p>
+                        </div>
+                        <div class="dropdown chart-dropdown">
+                            <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">Last 28 Days</a>
+                                <a class="dropdown-item" href="#">Last Month</a>
+                                <a class="dropdown-item" href="#">Last Year</a>
                             </div>
                         </div>
                     </div>
+                    <div class="card-body">
+                        <div class="d-inline-block me-1">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="circle" class="font-small-3 text-primary me-50"></i>
+                                <h6 class="mb-0">Sales</h6>
+                            </div>
+                        </div>
+                        <div class="d-inline-block">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="circle" class="font-small-3 text-info me-50"></i>
+                                <h6 class="mb-0">Visits</h6>
+                            </div>
+                        </div>
+                        <div id="sales-visit-chart"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-6">
-                <div class="card invoice-list-wrapper">
-                    <div class="card-datatable table-responsive">
-                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                            <div class="row d-flex justify-content-between align-items-center m-1">
-                                <div class="col-lg-6 d-flex align-items-center">
-                                    <div class="dataTables_length" id="DataTables_Table_0_length">
-                                        <label> Показать
-                                            <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div class="dt-action-buttons text-xl-end text-lg-start text-lg-end text-start">
-                                        <div class="dt-buttons">
-                                            <a class="dt-button btn btn-primary btn-add-record ms-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" href="{{ route('tours.create') }}"><span>Добавить перевозчика</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 d-flex align-items-center justify-content-lg-end flex-lg-nowrap flex-wrap pe-lg-1 p-0">
-                                    <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                                        <label>Поиск<input type="search" class="form-control " placeholder="Search Invoice" aria-controls="DataTables_Table_0"></label>
-                                    </div>
-                                    <div class="invoice_status ms-sm-2"></div>
+            <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <h4 class="card-title">Product Orders</h4>
+                            <div class="dropdown chart-dropdown">
+                                <button class="btn btn-sm border-0 dropdown-toggle px-50" type="button" id="dropdownItem2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Last 7 Days
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownItem2">
+                                    <a class="dropdown-item" href="#">Last 28 Days</a>
+                                    <a class="dropdown-item" href="#">Last Month</a>
+                                    <a class="dropdown-item" href="#">Last Year</a>
                                 </div>
                             </div>
-                            <table class="invoice-list-table table dataTable no-footer dtr-column" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
-                                <thead>
-                                <tr role="row">
-                                    <th class="control sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending"></th>
-                                    <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-sort="descending" aria-label="#: activate to sort column ascending">
-                                        #
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label=": activate to sort column ascending">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Client: activate to sort column ascending">
-                                        Client
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Total: activate to sort column ascending">
-                                        Total
-                                    </th>
-                                    <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Issued Date: activate to sort column ascending">
-                                        Дата поездки
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Balance: activate to sort column ascending">
-                                        Билетов
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr class="odd" onclick="window.location.href = '{{route('tours.index')}}'">
-                                    <td valign="top" colspan="7" class="dataTables_empty">Подробнее...</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                        </div>
+                        <div class="card-body">
+                            <div id="product-order-chart"></div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="d-flex align-items-center">
+                                    <i data-feather="circle" class="font-medium-1 text-primary"></i>
+                                    <span class="fw-bold ms-75">Finished</span>
+                                </div>
+                                <span>23043</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="d-flex align-items-center">
+                                    <i data-feather="circle" class="font-medium-1 text-warning"></i>
+                                    <span class="fw-bold ms-75">Pending</span>
+                                </div>
+                                <span>14658</span>
+                            </div>
                             <div class="d-flex justify-content-between">
-                                <div class="col-sm-12 col-md-6 ml-4-2">
-                                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Показано 0 to 0 of 0 записей</div>
+                                <div class="d-flex align-items-center">
+                                    <i data-feather="circle" class="font-medium-1 text-danger"></i>
+                                    <span class="fw-bold ms-75">Rejected</span>
                                 </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                        <ul class="pagination">
-                                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">&nbsp;</a>
-                                            </li>
-                                            <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next">
-                                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">&nbsp;</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <span>4758</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-app-design">
-                    <div class="card-body">
-                        <span class="badge badge-light-primary">{{ date('d M Y ') }}</span>
-                        <h4 class="card-title mt-1 mb-75 pt-25">Статистика</h4>
-                        <div class="design-group mb-2 pt-50">
-                            <h6 class="section-label">Маршруты</h6>
-                            <span class="badge badge-light-warning me-1">Figma</span>
-                            <span class="badge badge-light-primary">Wireframe</span>
-                        </div>
-                        <div class="design-group pt-25">
-                            <h6 class="section-label">Перевозчики</h6>
-                            <div class="avatar">
-                                <img src="/images/portrait/small/avatar-s-9.jpg" width="34" height="34" alt="Avatar">
+            <div class="col-lg-12 col-12">
+                <div class="row match-height">
+                    <!-- Sales Line Chart Card -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div>
+                                    <h4 class="card-title mb-25">Доход</h4>
+                                    <p class="card-text mb-0">За этот месяц: </p>
+                                    <h4> 12.84k</h4>
+                                    <p class="card-text mb-0 mt-2">Прошлый месяц:</p>
+                                    <h4> 20.84k</h4>
+
+                                </div>
+{{--                                <i data-feather="settings" class="font-medium-3 text-muted cursor-pointer"></i>--}}
                             </div>
-                            <div class="avatar bg-light-danger">
-                                <div class="avatar-content">PI</div>
-                            </div>
-                            <div class="avatar">
-                                <img src="/images/portrait/small/avatar-s-14.jpg" width="34" height="34" alt="Avatar">
-                            </div>
-                            <div class="avatar">
-                                <img src="/images/portrait/small/avatar-s-7.jpg" width="34" height="34" alt="Avatar">
-                            </div>
-                            <div class="avatar bg-light-secondary">
-                                <div class="avatar-content">AL</div>
+                            <div class="card-body pb-0">
+                                <div id="sales-line-chart"></div>
                             </div>
                         </div>
-                        <div class="design-planning-wrapper mb-2 py-75">
-                            <div class="design-planning">
-                                <p class="card-text mb-25">Проданых билетов</p>
-                                <h6 class="mb-0">12</h6>
-                            </div>
-                            <div class="design-planning">
-                                <p class="card-text mb-25">Сумма</p>
-                                <h6 class="mb-0">$49251.91</h6>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-primary w-100 waves-effect waves-float waves-light">К справочнику</button>
                     </div>
+                    <!--/ Sales Line Chart Card -->
                 </div>
             </div>
+
         </div>
     </section>
 @endsection

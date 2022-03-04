@@ -21,8 +21,24 @@
     <link rel="stylesheet" href="{{ asset('fonts/feather/iconfont.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flag-icon-css/css/flag-icon.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/base/plugins/forms/form-validation.css"') }}">
-    <link rel="stylesheet" href="{{ asset('/css/base/plugins/extensions/ext-component-sweet-alerts.css"') }}">
+    <link rel="stylesheet" href="{{ asset('/css/base/plugins/forms/form-validation.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/base/plugins/extensions/ext-component-sweet-alerts.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/base/pages/app-invoice-list.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/base/plugins/charts/chart-apex.css') }}">
+
+
+                                {{--FILE UPLOADER--}}
+    <link rel="stylesheet" href="{{ asset('css/base/plugins/forms/form-file-uploader.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
+
+
+
+
+
+    <link rel="stylesheet" href="{{ asset('css/base/plugins/forms/pickers/form-flat-pickr.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/css/pickers/pickadate/pickadate.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/css/pickers/flatpickr/flatpickr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/base/plugins/forms/pickers/form-pickadate.css') }}">
 
     <script src="{{ asset('vendors/js/jquery/jquery.min.js') }}"></script>
 
@@ -54,7 +70,6 @@
     </div>
 
     @yield('post-meta')
-
     <script src="{{ asset('js/scripts/ui/ui-feather.js') }}"></script>
 
     <script src="{{ asset('vendors/js/vendors.min.js') }}"></script>
@@ -62,6 +77,33 @@
     <script src="{{asset('vendors/js/extensions/toastr.min.js')}}"></script>
     <script src="{{asset('js/scripts/extensions/ext-component-clipboard.js')}}"></script>
     <script src="{{asset('js/scripts/pages/page-account-settings-account.js')}}"></script>
+
+
+    <script src="{{asset('vendors/js/charts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('vendors/js/extensions/moment.min.js')}}"></script>
+
+
+    <script src="{{asset('js/scripts/pages/dashboard-analytics.js')}}"></script>
+    <script src="{{asset('js/scripts/cards/card-analytics.js')}}"></script>
+
+                            {{--ДАТА И ВРЕМЯ--}}
+    <script src="{{asset('js/scripts/forms/pickers/form-pickers.js')}}"></script>
+
+
+
+{{--    <script src="{{asset('vendors/js/pickers/pickadate/picker.js')}}"></script>--}}
+    <script src="{{asset('vendors/js/pickers/pickadate/picker.date.js')}}"></script>
+    <script src="{{asset('vendors/js/pickers/pickadate/picker.time.js')}}"></script>
+{{--    <script src="{{asset('vendors/js/pickers/pickadate/legacy.js')}}"></script>--}}
+{{--    <script src="{{asset('vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>--}}
+
+
+    <script src="{{asset('js/scripts/pages/app-invoice-list.js')}}"></script>
+
+                            {{--FILE UPLOADER--}}
+    <script src="{{asset('js/scripts/forms/form-file-uploader.js')}}"></script>
+    <script src="{{asset('vendors/js/file-uploaders/dropzone.min.js')}}"></script>
+
 
 
     <script src="{{ asset('js/core/app-menu.js') }}"></script>

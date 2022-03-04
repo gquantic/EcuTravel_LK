@@ -67,6 +67,7 @@ class VehicleController extends Controller
             'model_vehicle'=> $request->model_vehicle,
             'note_vehicle'=> $request->note_vehicle,
             'condition_vehicle'=> $request->condition_vehicle,
+            'number_of_seats'=> $request->number_of_seats,
 
         ]);
 

@@ -94,32 +94,6 @@
                                         <td style=" ">
                                             <div class="col-2" style="display: flex">
 
-                                                <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect"  data-bs-toggle="modal" data-bs-target="#backdrop" >
-                                                    <svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="tooltip" data-bs-original-title="Скопировать" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                                </button>
-
-
-                                                <div class="disabled-backdrop-ex">
-                                                    <!-- Button trigger modal -->
-                                                    <!-- Modal -->
-                                                    <div class="modal fade text-start" id="backdrop" tabindex="-1" aria-labelledby="myModalLabel4" data-bs-backdrop="false" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h4 class="modal-title" id="myModalLabel4">Копирование данных таблицы</h4>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <input type="text" class="form-control" id="copy-to-clipboard-input" value="{{$driver->id}} (ID), {{$driver->name}} (Ф.И.О), {{$driver->position}} (Должность), {{$driver->passport_number}} (Паспорт), {{ $driver->created_at }}(Дата поездки),  {{ $driver->note_drivers }} (Примечания), {{$driver->condition_driver}} (1 активно, 2 не активно)">
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button"  class="btn btn-primary" data-bs-dismiss="modal" id="btn-copy">Скопировать!</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <button type="button" class="btn btn-icon btn-icon rounded-circle btn-flat-success  waves-effect">
                                                     <a href="{{ route('drivers.show', $driver)}}"><svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="tooltip" data-bs-original-title="Подробнее..." width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
                                                 </button>

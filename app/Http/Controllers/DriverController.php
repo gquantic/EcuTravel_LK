@@ -15,7 +15,6 @@ class DriverController extends Controller
     {
         $this->pageData = [
             'header' => true,
-
             'user_id',
             'name',
             'passport_number',

@@ -53,6 +53,11 @@
                                 <input type="text" name="gus_number_vehicle" class="form-control mt-1">
                             </div>
 
+                            <div class="form-group mb-1" id="gosNumber">
+                                <label for="">Количество посадочных мест</label>
+                                <input type="number" name="number_of_seats" class="form-control mt-1">
+                            </div>
+
                             <div class="form-group mb-1">
                                 <label for="">Примечания</label>
                                 <textarea class="form-control mt-1" name="note_vehicle" id="exampleFormControlTextarea1" rows="3"></textarea>
