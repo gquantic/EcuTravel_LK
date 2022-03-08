@@ -20,7 +20,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header mb-0">Просмотр данных транспортного средства {{$vehicle->id}}</h2>
+                        <h2 class="content-header mb-0">Просмотр данных транспортного средства | {{$vehicle->id}}</h2>
                     </div>
                 </div>
             </div>
@@ -47,23 +47,23 @@
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2" id="gosNumber">
                                             <label for="">Модель</label>
-                                            <input type="text" name="model_vehicle" class="form-control credit-card-mask mt-1" value="{{$vehicle->model_vehicle }}">
+                                            <input type="text" disabled name="model_vehicle" class="form-control credit-card-mask mt-1" value="{{$vehicle->model_vehicle }}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label for="">Регистрационный номер</label>
-                                            <input type="text" name="gus_number_vehicle" class="form-control credit-card-mask mt-1" value="{{$vehicle->gus_number_vehicle}}">
+                                            <input type="text" disabled name="gus_number_vehicle" class="form-control credit-card-mask mt-1" value="{{$vehicle->gus_number_vehicle}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label for="">Количество посадочных мест</label>
-                                            <input type="text" name="number_of_seats" class="form-control credit-card-mask mt-1" value="{{$vehicle->number_of_seats}}">
+                                            <input type="text" disabled name="number_of_seats" class="form-control credit-card-mask mt-1" value="{{$vehicle->number_of_seats}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label for="">Примечания</label>
 {{--                                            <h4 class="mt-1">{{$vehicle->note_vehicle}}</h4>--}}
-                                            <textarea class="form-control mt-1" name="note_vehicle" id="exampleFormControlTextarea1" rows="1" placeholder="{{$vehicle->note_vehicle}}"></textarea>
+                                            <textarea class="form-control mt-1" disabled name="note_vehicle" id="exampleFormControlTextarea1" rows="1" placeholder="{{$vehicle->note_vehicle}}"></textarea>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">

@@ -33,8 +33,8 @@ class CreateRoutesTable extends Migration
 
 
 
-            /** ^_^ **/
-                        /** БАГАЖ **/
+                     /** ^_^ **/
+                    /** БАГАЖ **/
             $table->integer('basic_price');
             $table->integer('child_price');
             $table->integer('bag_price');

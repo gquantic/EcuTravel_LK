@@ -27,7 +27,9 @@
                                 <label for="">Транспорт</label>
                                 <select name="vehicle" id="" class="form-control mt-1">
                                     @foreach($vehicles as $vehicle)
-                                        <option value="{{ $vehicle->id}}">@switch($vehicle->type_ts)
+                                        <option value="{{ $vehicle->id}}">
+
+                                            @switch($vehicle->type_ts)
                                                 @case('passenger')
                                                 Легковой транспорт
                                                 @break
@@ -38,16 +40,27 @@
                                                 Микроавтобус
                                                 @break
                                             @endswitch
-                                            {{"[{$vehicle->gus_number_vehicle}]"}}</option>
+                                            {{"[{$vehicle->gus_number_vehicle}]"}}
+
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Водитель</label>
-                                <select name="drivers" id="" class="form-control mt-1">
+                                <select name="driver" id="" class="form-control mt-1">
                                     @foreach($drivers as $driver)
-                                        <option value="{{ $driver->id }}">{{ $driver->name }}</option>
+                                        <option>{{ $driver->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Водитель 2</label>
+                                <select name="driver_2" id="" class="form-control mt-1">
+                                    @foreach($drivers as $driver)
+                                        <option>{{ $driver->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -56,14 +69,14 @@
                                 <label for="">Маршрут</label>
                                 <select name="route" id="" class="form-control mt-1 ">
                                     @foreach($routes as $route)
-                                        <option value="{{ $route->id }}">{{ $route->depart_station . ' - ' . $route->arrival_station}}</option>
+                                        <option value="{{$route->id}}">{{ $route->number_routes. ' - ' . $route->depart_station . ' - ' . $route->arrival_station }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Время отправки</label>
-                                <input type="time"  name="depart_time" id="datetimepicker" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
+                                <input type="time" name="depart_time" id="datetimepicker" class="form-control mt-1 @error('depart_time') is-invalid @enderror">
 
                                 @error('depart_time')
                                 <span class="invalid-feedback" role="alert">

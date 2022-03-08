@@ -56,6 +56,13 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required',
+            'passport'=>'required',
+            'position'=> 'required',
+        ]);
+
+
         Driver::create([
             'user_id' => \Auth::id(),
             'name' => $request->name,

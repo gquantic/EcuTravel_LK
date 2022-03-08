@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Просмотр данных о Рейсе {{$tour->id}}</h2>
+                        <h2 class="content-header float-start mb-0">Просмотр данных о Рейсе | {{$tour->route}}</h2>
                     </div>
                 </div>
             </div>
@@ -37,46 +37,46 @@
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Транспорт</label>
-                                            <input type="text" class="form-control credit-card-mask"  value="{{$tour->vehicle}}">
+                                            <input type="text" disabled class="form-control credit-card-mask"  value="{{$tour->vehicle}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Водитель</label>
-                                            <input type="text" class="form-control credit-card-mask"  value="{{$tour->driver}}">
+                                            <input type="text" disabled class="form-control credit-card-mask"  value="{{$tour->driver}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Маршрут</label>
-                                            <input type="text" class="form-control credit-card-mask" value="{{$tour->route}}">
+                                            <input type="text" disabled class="form-control credit-card-mask" value="{{$tour->route}}">
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Время отправки</label>
-                                            <input type="text" class="form-control credit-card-mask" name="depart_time" value="{{$tour->depart_time}}">
+                                            <input type="text" disabled class="form-control credit-card-mask" name="depart_time" value="{{$tour->depart_time}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Время прибытия</label>
-                                            <input type="text" class="form-control credit-card-mask" name="arrival_time" value="{{$tour->arrival_time}}">
+                                            <input type="text" disabled class="form-control credit-card-mask" name="arrival_time" value="{{$tour->arrival_time}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Дата отправления</label>
-                                            <input type="text" class="form-control" name="departure_date" value="{{$tour->departure_date}}">
+                                            <input type="text" disabled class="form-control" name="departure_date" value="{{$tour->departure_date}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Дата прибытия</label>
-                                            <input type="text" class="form-control" name="arrival_date" value="{{$tour->arrival_date}}">
+                                            <input type="text" disabled class="form-control" name="arrival_date" value="{{$tour->arrival_date}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Примечания</label>
-                                            <input type="text" class="form-control" name="note_tours" value="{{$tour->note_tours}}">
+                                            <input type="text" disabled class="form-control" name="note_tours" value="{{$tour->note_tours}}">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label for="" class="form-label">Состояние</label>
-                                            <select name="" id="" class="form-control ">
+                                            <select disabled name="" id="" class="form-control ">
                                                 <option value="">Активно</option>
                                                 <option value="">Не активно</option>
                                             </select>

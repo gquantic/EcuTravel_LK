@@ -79,7 +79,7 @@ class RouteController extends Controller
             'note_routes' => $request->note_routes,
             'condition_routes'=>$request->condition_routes
         ]);
-
+//        dd($request);
         return redirect()->route('routes.index');
     }
 

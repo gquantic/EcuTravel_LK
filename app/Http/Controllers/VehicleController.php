@@ -57,7 +57,8 @@ class VehicleController extends Controller
         $request->validate([
             'type_ts'=>'required',
             'gus_number_vehicle'=>'required',
-            'model_vehicle'=>'required'
+            'model_vehicle'=>'required',
+            'number_of_seats'=>'required',
         ]);
 
         Vehicle::create([

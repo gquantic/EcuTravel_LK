@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Редактирование данных о Рейсе {{$tour->id}}</h2>
+                        <h2 class="content-header float-start mb-0">Редактирование данных о Рейсе | {{$tour->id}}</h2>
                     </div>
                 </div>
             </div>
@@ -51,6 +51,15 @@
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Водитель</label>
                                             <select disabled name="driver" class="form-control credit-card-mask">
+                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
+                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
+                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form-label">Водитель 2</label>
+                                            <select disabled name="driver_2" class="form-control credit-card-mask">
                                                 <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
                                                 <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
                                                 <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>

@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Просмотр данных о маршруте {{$route->number_routes}}</h2>
+                        <h2 class="content-header float-start mb-0">Просмотр данных о маршруте | {{$route->number_routes}}</h2>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Номер маршрута</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$route->number_routes}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$route->number_routes}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
@@ -51,41 +51,41 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Станция отправления</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$route->depart_station}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$route->depart_station}}">
                                     </div>
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Адрес отправления </label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$route->departure_address}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$route->departure_address}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Станция прибытия </label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$route->arrival_station}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$route->arrival_station}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Адрес прибытия</label>
-                                        <input type="text" class="form-control" value="{{$route->arrival_address}}">
+                                        <input type="text" disabled class="form-control" value="{{$route->arrival_address}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Базовая стоимость багажа</label>
-                                        <input type="text" class="form-control" value="{{$route->basic_price}}">
+                                        <input type="text" disabled  class="form-control" value="{{$route->basic_price}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Стоимость детского билета</label>
-                                        <input type="text" class="form-control" value="{{$route->child_price}}">
+                                        <input type="text" disabled class="form-control" value="{{$route->child_price}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Стоимость багажа</label>
-                                        <input type="text" class="form-control" value="{{$route->bag_price}}">
+                                        <input type="text" disabled class="form-control" value="{{$route->bag_price}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Примечания</label>
-                                        <input type="text" class="form-control" value="{{$route->note_routes}}">
+                                        <input type="text" disabled class="form-control" value="{{$route->note_routes}}">
                                     </div>
                                 </div>
                             </div>

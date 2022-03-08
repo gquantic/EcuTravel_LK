@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Просмотр данных о водителе {{$driver->name}}</h2>
+                        <h2 class="content-header float-start mb-0">Просмотр данных о водителе | {{$driver->name}}</h2>
                     </div>
                 </div>
             </div>
@@ -37,26 +37,26 @@
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Ф.И.О.</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$driver->name}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$driver->name}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Должность</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$driver->position}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$driver->position}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Паспорт</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{ substr($driver->passport_number, 0, 2).'** ****'.substr($driver->passport_number, -2) }}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{ substr($driver->passport_number, 0, 2).'** ****'.substr($driver->passport_number, -2) }}">
                                     </div>
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Дата поездки </label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{ $driver->created_at }}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{ $driver->created_at }}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Дата поездки </label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{ $driver->note_drivers}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{ $driver->note_drivers}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2" data-select2-id="45">

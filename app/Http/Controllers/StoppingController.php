@@ -46,13 +46,12 @@ class StoppingController extends Controller
      */
     public function store(Request $request)
     {
-//        $request->validate([
-//            'locality'=>'required',
-//            'name_of_the_stop_point'=>'required',
-//            'address'=>'required',
-//            'note_stopping'=>'required',
-//            'сondition_stopping'=>'required',
-//        ]);
+        $request->validate([
+            'locality'=>'required',
+            'name_of_the_stop_point'=>'required',
+            'address'=>'required',
+            'condition_stopping'=>'required',
+        ]);
 
 
         $stopping = new Stopping([

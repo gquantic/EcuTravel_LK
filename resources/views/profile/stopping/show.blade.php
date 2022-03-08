@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Просмотр данных о пункте {{$stopping->name_of_the_stop_point}}</h2>
+                        <h2 class="content-header float-start mb-0">Просмотр данных о пункте | {{$stopping->name_of_the_stop_point}}</h2>
                     </div>
                 </div>
             </div>
@@ -37,25 +37,25 @@
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Населённый пункт</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$stopping->locality}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$stopping->locality}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Название остановочного пункта</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$stopping->name_of_the_stop_point}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$stopping->name_of_the_stop_point}}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Адрес</label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{$stopping->address}}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{$stopping->address}}">
                                     </div>
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Примечания </label>
-                                        <input type="text" class="form-control credit-card-mask" value="{{ $stopping->note_stopping }}">
+                                        <input type="text" disabled class="form-control credit-card-mask" value="{{ $stopping->note_stopping }}">
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2" data-select2-id="45">
-                                        <label class="form-label" for="basicSelect">Состояние</label>
+                                        <label class="form-label"  for="basicSelect">Состояние</label>
                                         <select disabled name="condition_stopping" id="basicSelect" class="form-control credit-card-mask">
                                             <option value="1" @if($stopping->сondition_stopping == '1') selected @endif>Активно</option>
                                             <option value="0" @if($stopping->сondition_stopping == '0') selected @endif>Не активно</option>

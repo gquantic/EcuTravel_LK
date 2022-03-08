@@ -25,22 +25,40 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Ф.И.О.</label>
-                                <input type="text" name="name" class="form-control mt-1">
+                                <input type="text" value="{{old('name')}}" name="name" class="form-control mt-1 @error('name') is-invalid @enderror">
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Серия и номер паспорта</label>
-                                <input type="number" name="passport" class="form-control mt-1">
+                                <input type="number" value="{{old('passport')}}" name="passport" class="form-control mt-1 @error('passport') is-invalid @enderror">
+
+                                @error('passport')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Должность</label>
-                                <input type="text" name="position" class="form-control mt-1">
+                                <input type="text" value="{{old('position')}}" name="position" class="form-control mt-1 @error('position') is-invalid @enderror">
+
+                                @error('position')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Примечания</label>
-                                <textarea class="form-control mt-1" name="note_drivers" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control mt-1" placeholder="{{old('note_drivers')}}" name="note_drivers" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                             <div class="form-group mb-1" data-select2-id="45">

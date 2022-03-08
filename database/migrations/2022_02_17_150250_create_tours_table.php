@@ -23,12 +23,13 @@ class CreateToursTable extends Migration
             $table->foreign('vehicle')->references('id')->on('vehicles');
 
             $table->string('driver');
+            $table->string('driver_2');
 
             $table->time('depart_time')->nullable();
             $table->time('arrival_time')->nullable();
-
             $table->timestamp('departure_date')->nullable();
             $table->timestamp('arrival_date')->nullable();
+
             $table->string('note_tours')->nullable();
 
             $table->string('condition_tours');

@@ -24,22 +24,40 @@
                             @method('POST')
                             <div class="form-group mb-1">
                                 <label for="">Населённый пункт</label>
-                                <input type="text" name="locality" class="form-control mt-1">
+                                <input type="text" value="{{old('locality')}}" name="locality" class="form-control mt-1 @error('locality') is-invalid @enderror">
+
+                                @error('locality')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Название остановочного пункта</label>
-                                <input type="text" name="name_of_the_stop_point" class="form-control mt-1">
+                                <input type="text" value="{{old('name_of_the_stop_point')}}" name="name_of_the_stop_point" class="form-control mt-1 @error('name_of_the_stop_point') is-invalid @enderror">
+
+                                @error('name_of_the_stop_point')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Адрес</label>
-                                <input type="text" name="address" class="form-control mt-1">
+                                <input type="text" value="{{old('address')}}" name="address" class="form-control mt-1 @error('address') is-invalid @enderror">
+
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
                                 <label for="">Примечания</label>
-                                <textarea class="form-control mt-1" name="note_stopping" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control mt-1" placeholder="{{old('note_stopping')}}" name="note_stopping" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                             <div class="form-group mb-1" data-select2-id="45">

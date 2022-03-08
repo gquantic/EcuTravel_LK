@@ -11,8 +11,10 @@ class Tour extends Model
 
     protected $fillable = [
         'driver',
+        'driver_2',
         'route',
         'vehicle',
+
         'depart_time',
         'arrival_time',
         'departure_date',

@@ -20,7 +20,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header mb-0">Редактирование данных водителя {{$driver->name}}</h2>
+                        <h2 class="content-header mb-0">Редактирование данных водителя | {{$driver->name}}</h2>
 
                     </div>
                 </div>
@@ -62,7 +62,7 @@
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Примечание</label>
-                                            <textarea type="text" class="form-control credit-card-mask" name="note_drivers" rows="1"></textarea>
+                                            <textarea type="text" class="form-control credit-card-mask" placeholder="{{$driver->note_drivers}}" name="note_drivers" rows="1"></textarea>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">

@@ -21,7 +21,10 @@
                     <div class="card-datatable table-responsive">
                         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                             <div class="row p-1 pr-0">
-                                <div class="col-12 d-flex align-items-end justify-content-end">
+                                <div class="col-6 d-flex align-items-center justify-content-start">
+                                    <h3 class="mb-0">Транспортные средства</h3>
+                                </div>
+                                <div class="col-6 d-flex align-items-end justify-content-end">
                                     <a href="{{ route('vehicle.create') }}">
                                         <button class="dt-button btn btn-primary btn-add-record ms-2" tabindex="0" aria-controls="DataTables_Table_0" type="button"><span>Добавить транспортное средство</span></button>
                                     </a>
