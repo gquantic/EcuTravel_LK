@@ -26,7 +26,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        $vehicles = Vehicle::all();
+        $vehicles = Vehicle::where('user_id', \Auth::id())->get();
 
         return view('profile.vehicles.index', [
             'pageData' => $this->pageData,
@@ -94,9 +94,7 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-
         return view('profile.vehicles.edit', compact('vehicle'), ['pageData' => $this->pageData]);
-
     }
 
     /**
@@ -108,10 +106,6 @@ class VehicleController extends Controller
      */
     public function update(Request $request, Vehicle $vehicle)
     {
-//        $request->validate([
-//            'model_vehicle'=>'required',
-//        ]);
-
         $vehicle->update($request->all());
 
         return redirect()->route('vehicle.index');

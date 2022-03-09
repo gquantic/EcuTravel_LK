@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header float-start mb-0">Редактирование данных о Рейсе | {{$tour->id}}</h2>
+                        <h2 class="content-header float-start mb-0">Редактирование данных о Рейсе | {{$tour->route_number }}</h2>
                     </div>
                 </div>
             </div>

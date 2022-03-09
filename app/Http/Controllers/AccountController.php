@@ -20,11 +20,10 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(Account $account)
+    public function index()
     {
-        return view('profile.account.index',   compact('account'),[
+        return view('profile.account.index',[
             'pageData' => $this->pageData,
-            'account'=>Account::all(),
         ]);
     }
 

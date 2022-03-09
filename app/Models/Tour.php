@@ -14,6 +14,7 @@ class Tour extends Model
         'driver_2',
         'route',
         'vehicle',
+        'route_number',
 
         'depart_time',
         'arrival_time',

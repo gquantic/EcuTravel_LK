@@ -47,7 +47,7 @@
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Маршрут</label>
-                                            <input type="text" disabled class="form-control credit-card-mask" value="{{$tour->route}}">
+                                            <input type="text" disabled class="form-control credit-card-mask" value="{{$tour->route_number}}">
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Время отправки</label>

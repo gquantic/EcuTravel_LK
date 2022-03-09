@@ -51,11 +51,12 @@ class TourController extends Controller
      */
     public function create()
     {
-        $routes = Route::all();
+        $routes = Route::where('user', \Auth::id())->get();
+
         return view('profile.tours.create', [
             'pageData' => $this->pageData,
-            'drivers' => Driver::all(),
-            'vehicles' => Vehicle::all(),
+            'drivers' => Driver::where('user_id', \Auth::id())->get(),
+            'vehicles' => Vehicle::where('user_id', \Auth::id())->get(),
             'routes'=> $routes
         ]);
     }
@@ -75,12 +76,16 @@ class TourController extends Controller
             'arrival_date' => 'required',
         ]);
 
+
+        $routeNumber = Route::where('id', $request->get('route'))->first();
+
         $tour = new Tour([
             'user' => \Auth::id(),
             'driver' => $request->get('driver'),
             'driver_2' => $request->get('driver_2'),
             'route' => $request->get('route'),
             'vehicle' => $request->get('vehicle'),
+            'route_number' => $routeNumber->number_routes,
 
             'depart_time' => $request->get('depart_time'),
             'arrival_time' => $request->get('arrival_time'),
@@ -90,7 +95,6 @@ class TourController extends Controller
             'note_tours' => $request->get('note_tours'),
             'condition_tours' => $request->get('condition_tours')
         ]);
-//        dd($request);
         $tour->save();
         return redirect()->route('tours.index');
     }

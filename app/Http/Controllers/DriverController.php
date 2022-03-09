@@ -31,9 +31,11 @@ class DriverController extends Controller
      */
     public function index()
     {
+//        dd(Driver::where('user_id', \Auth::id()));
+
         return view('profile.drivers.index', [
             'pageData' => $this->pageData,
-            'drivers' => Driver::all(),
+            'drivers' => Driver::where('user_id', \Auth::id())->get(),
         ]);
 
     }
@@ -57,19 +59,18 @@ class DriverController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
-            'passport'=>'required',
+            'name'=> 'required',
+            'passport'=> 'required',
             'position'=> 'required',
         ]);
-
 
         Driver::create([
             'user_id' => \Auth::id(),
             'name' => $request->name,
             'passport_number' => $request->passport,
             'position' => $request->position,
-            'note_drivers'=>$request->note_drivers,
-            'condition_driver'=>$request->condition_driver
+            'note_drivers'=> $request->note_drivers,
+            'condition_driver'=> $request->condition_driver
         ]);
 
         return redirect()->route('drivers.index')->with('success', 'Перевозчик успешно добавлен!');
