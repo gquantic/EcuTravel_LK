@@ -78,6 +78,7 @@ class TourController extends Controller
 
 
         $routeNumber = Route::where('id', $request->get('route'))->first();
+        $vehicleType = Vehicle::where('id', $request->get('vehicle'))->first();
 
         $tour = new Tour([
             'user' => \Auth::id(),
@@ -86,6 +87,9 @@ class TourController extends Controller
             'route' => $request->get('route'),
             'vehicle' => $request->get('vehicle'),
             'route_number' => $routeNumber->number_routes,
+            'route_depart_station' => $routeNumber->depart_station,
+            'route_arrival_station' => $routeNumber->arrival_station,
+            'vehicle_type' => $vehicleType->type_ts,
 
             'depart_time' => $request->get('depart_time'),
             'arrival_time' => $request->get('arrival_time'),
@@ -95,6 +99,7 @@ class TourController extends Controller
             'note_tours' => $request->get('note_tours'),
             'condition_tours' => $request->get('condition_tours')
         ]);
+
         $tour->save();
         return redirect()->route('tours.index');
     }
@@ -118,8 +123,14 @@ class TourController extends Controller
      */
     public function edit(Tour $tour)
     {
+        $drivers = Driver::all();
+        $routes = Route::all();
 
-        return view('profile.tours.edit', compact('tour'), ['pageData' => $this->pageData]);
+        return view('profile.tours.edit', compact('tour'), [
+            'pageData' => $this->pageData,
+            'drivers' =>$drivers,
+            'routes' =>$routes
+        ]);
 
     }
 
@@ -132,6 +143,8 @@ class TourController extends Controller
      */
     public function update(Request $request, Tour $tour)
     {
+        $routeNumber = Route::where('id', $request->get('route'))->first();
+
         $tour->update($request->all());
         return redirect()->route('tours.index');
     }

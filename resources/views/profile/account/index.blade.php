@@ -76,7 +76,7 @@
                             <div class="card-body mb-75">
                                 <div class="d-flex ">
                                 <a href="#" class="mb-75">
-                                    <img src="{{asset('/storage/' .$account->logo)}}" id="account-upload-img" class="uploadedAvatar rounded" alt="profile image" height="100" width="100" />
+                                    <img src="{{asset('/storage/' )}}" id="account-upload-img" class="uploadedAvatar rounded" alt="profile image" height="100" width="100" />
                                 </a>
                                 <!-- upload and reset button -->
                                 <div class="d-flex align-items-end mb-75 ms-1">

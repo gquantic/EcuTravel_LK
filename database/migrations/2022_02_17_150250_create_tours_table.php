@@ -23,8 +23,12 @@ class CreateToursTable extends Migration
             $table->foreign('vehicle')->references('id')->on('vehicles');
 
             $table->string('route_number')->nullable();
+            $table->string('route_depart_station')->nullable();
+            $table->string('route_arrival_station')->nullable();
+
+            $table->string('vehicle_type')->nullable();
             $table->string('driver');
-            $table->string('driver_2');
+            $table->string('driver_2')->nullable();
 
             $table->time('depart_time')->nullable();
             $table->time('arrival_time')->nullable();

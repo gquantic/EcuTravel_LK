@@ -19,7 +19,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header float-start mb-0">Просмотр данных о Рейсе | {{$tour->route}}</h2>
+                        <h2 class="content-header float-start mb-0">Просмотр данных о Рейсе | {{$tour->route_number }}</h2>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Транспорт</label>
-                                            <input type="text" disabled class="form-control credit-card-mask"  value="{{$tour->vehicle}}">
+                                            <input type="text" disabled class="form-control credit-card-mask"  value="@switch($tour->vehicle_type) @case('passenger')Легковой транспорт  @break @case('bus')Автобус  @break @case('minibus')Микроавтобус @break @endswitch">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
@@ -46,8 +46,13 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form-label" for="credit-card">Водитель 2</label>
+                                            <input type="text" disabled class="form-control credit-card-mask"  value="{{$tour->driver_2}}">
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Маршрут</label>
-                                            <input type="text" disabled class="form-control credit-card-mask" value="{{$tour->route_number}}">
+                                            <input type="text"  class="form-control credit-card-mask" value="{{$tour->route_number}} [ {{$tour->route_depart_station}} - {{$tour->route_arrival_station}} ]">
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Время отправки</label>
@@ -70,16 +75,17 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Примечания</label>
-                                            <input type="text" disabled class="form-control" name="note_tours" value="{{$tour->note_tours}}">
+                                            <label for="" class="form-label">Состояние</label>
+                                            <select disabled name="" id="" class="form-control ">
+                                                <option value="1" @if($tour->condition_tours == 1) selected @endif>Активно</option>
+                                                <option value="0" @if($tour->condition_tours == 0) selected @endif>Не активно</option>
+                                            </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label for="" class="form-label">Состояние</label>
-                                            <select disabled name="" id="" class="form-control ">
-                                                <option value="">Активно</option>
-                                                <option value="">Не активно</option>
-                                            </select>
+                                            <label class="form-label" for="credit-card">Примечания</label>
+                                            <textarea class="form-control mt-1" name="note_tours" id="exampleFormControlTextarea1" placeholder="{{$tour->note_tours}}" rows="3"></textarea>
+{{--                                            <input type="text" disabled class="form-control" name="note_tours" value="{{$tour->note_tours}}">--}}
                                         </div>
                                     </div>
                                 </div>

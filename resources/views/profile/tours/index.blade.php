@@ -38,19 +38,19 @@
                                         Номер Рейса
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label=": activate to sort column ascending">
-                                        Транспорт
+                                        Дата отправления
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Client: activate to sort column ascending">
-                                        Время отправки
+                                        Адрес отправления
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Total: activate to sort column ascending">
-                                        Время прибытия
+                                        Адрес прибытия
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Total: activate to sort column ascending">
-                                        Маршрут
+                                        Время отправления
                                     </th>
                                     <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Issued Date: activate to sort column ascending">
-                                        Дата отправления
+                                        Время прибытия
                                     </th>
 {{--                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Balance: activate to sort column ascending">--}}
 {{--                                        Билетов--}}
@@ -72,22 +72,25 @@
                                 @foreach($tours as $tour)
                                     <tr class="odd">
                                         <td>
-                                            {{ $tour->id }}
+                                            {{ $tour->route_number }}
                                         </td>
                                         <td>
-                                            {{$tour->vehicle}}
+                                            {{ $tour->departure_date }}
                                         </td>
+
                                         <td>
-                                            {{ $tour->depart_time }}
+                                            {{$tour->route_depart_station}}
                                         </td>
+
+                                        <td>
+                                            {{$tour->route_arrival_station}}
+                                        </td>
+
                                         <td>
                                             {{ $tour->arrival_time }}
                                         </td>
                                         <td>
-                                            {{ $tour->route }}
-                                        </td>
-                                        <td>
-                                            {{ $tour->departure_date }}
+                                            {{ $tour->depart_time }}
                                         </td>
                                         <td>
 
@@ -135,7 +138,7 @@
                                                                     Вы действительно хотите безвозратно удалить эту запись ?
                                                                 </p>
                                                             </div>
-                                                            <form action="{{ route('tours.destroy',$tour) }}" method="POST">
+                                                            <form action="{{ route('tours.destroy', $tour) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <div class="modal-footer">

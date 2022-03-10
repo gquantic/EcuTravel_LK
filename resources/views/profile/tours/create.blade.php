@@ -58,7 +58,9 @@
 
                             <div class="form-group mb-1">
                                 <label for="">Водитель 2</label>
-                                <select name="driver_2" id="" class="form-control mt-1">
+                                <select name="driver_2" id=""  class="form-control mt-1">
+                                    <option value="">-------</option>
+
                                     @foreach($drivers as $driver)
                                         <option>{{ $driver->name }}</option>
                                     @endforeach

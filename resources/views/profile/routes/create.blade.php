@@ -47,7 +47,7 @@
                                 <label for="">Станция отправления</label>
                                 <select type="text" name="depart_station"  id="" class="form-control mt-1">
                                     @foreach($stoppings as $stopping)
-                                        <option>{{ $stopping->name_of_the_stop_point }}</option>
+                                        <option>{{ $stopping->locality }}</option>
                                     @endforeach
                                 </select>
                             </div>

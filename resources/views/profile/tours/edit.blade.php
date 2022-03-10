@@ -41,37 +41,39 @@
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Транспорт</label>
-                                            <select disabled name="vehicle" class="form-control credit-card-mask">
-                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
-                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
-                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
+                                            <select  name="vehicle_type" class="form-control credit-card-mask">
+                                                <option value="passenger" @if($tour->vehicle_type == 'passenger') selected @endif>Легковой транспорт</option>
+                                                <option value="bus" @if($tour->vehicle_type == 'bus') selected @endif>Автобус</option>
+                                                <option value="minibus" @if($tour->vehicle_type == 'minibus') selected @endif>Микроавтобус</option>
                                             </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Водитель</label>
-                                            <select disabled name="driver" class="form-control credit-card-mask">
-                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
-                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
-                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
+                                            <select name="driver" id="" class="form-control credit-card-mask">
+                                                @foreach($drivers as $driver)
+                                                    <option>{{ $driver->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Водитель 2</label>
-                                            <select disabled name="driver_2" class="form-control credit-card-mask">
-                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
-                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
-                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
+                                            <select name="driver_2" id=""  class="form-control credit-card-mask">
+
+                                                <option value="">-------</option>
+                                                @foreach($drivers as $driver)
+                                                    <option>{{ $driver->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Маршрут</label>
-                                            <select disabled name="routes" class="form-control credit-card-mask">
-                                                <option value="intercity" @if($tour->route_type == 'intercity') selected @endif>Междугородный</option>
-                                                <option value="regional" @if($tour->route_type == 'regional') selected @endif>Региональный</option>
-                                                <option value="inner_city" @if($tour->route_type == 'inner_city') selected @endif>Внутригородской</option>
+                                            <select name="routes" class="form-control credit-card-mask">
+                                                @foreach($routes as $route)
+                                                    <option value="{{$route->id}}">{{ $route->number_routes. ' - ' . $route->depart_station . ' - ' . $route->arrival_station }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">

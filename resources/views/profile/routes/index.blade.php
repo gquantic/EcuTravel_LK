@@ -51,7 +51,7 @@
                                     </th>
 
                                     <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Issued Date: activate to sort column ascending">
-                                        Дата поездки
+                                        Адрес прибытия
                                     </th>
 
                                     <th>

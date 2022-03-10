@@ -84,8 +84,16 @@
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                        <label for="" class="form-label">Состояние</label>
+                                        <select disabled name="" id="" class="form-control ">
+                                            <option value="1" @if($route->condition_routes == 1) selected @endif>Активно</option>
+                                            <option value="0" @if($route->condition_routes == 0) selected @endif>Не активно</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                         <label class="form-label" for="credit-card">Примечания</label>
-                                        <input type="text" disabled class="form-control" value="{{$route->note_routes}}">
+                                        <textarea type="text"  class="form-control" placeholder="{{$route->note_routes}}"></textarea>
                                     </div>
                                 </div>
                             </div>
