@@ -37,7 +37,7 @@
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Транспорт</label>
-                                            <input type="text" disabled class="form-control credit-card-mask"  value="@switch($tour->vehicle_type) @case('passenger')Легковой транспорт  @break @case('bus')Автобус  @break @case('minibus')Микроавтобус @break @endswitch">
+                                            <input type="text" disabled class="form-control credit-card-mask"  value="{{$tour->vehicle_model_vehicle}} ({{$tour->vehicle_gus_number_vehicle}})">
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">

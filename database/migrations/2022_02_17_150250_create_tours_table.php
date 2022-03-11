@@ -26,7 +26,14 @@ class CreateToursTable extends Migration
             $table->string('route_depart_station')->nullable();
             $table->string('route_arrival_station')->nullable();
 
+            $table->string('route_departure_address')->nullable();
+            $table->string('route_arrival_address')->nullable();
+
             $table->string('vehicle_type')->nullable();
+            $table->string('vehicle_model_vehicle')->nullable();
+            $table->string('vehicle_gus_number_vehicle')->nullable();
+
+
             $table->string('driver');
             $table->string('driver_2')->nullable();
 

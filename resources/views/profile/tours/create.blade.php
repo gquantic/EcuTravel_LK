@@ -28,19 +28,9 @@
                                 <select name="vehicle" id="" class="form-control mt-1">
                                     @foreach($vehicles as $vehicle)
                                         <option value="{{ $vehicle->id}}">
+                                            {{$vehicle->model_vehicle}}
 
-                                            @switch($vehicle->type_ts)
-                                                @case('passenger')
-                                                Легковой транспорт
-                                                @break
-                                                @case('bus')
-                                                Автобус
-                                                @break
-                                                @case('minibus')
-                                                Микроавтобус
-                                                @break
-                                            @endswitch
-                                            {{"[{$vehicle->gus_number_vehicle}]"}}
+                                            {{"({$vehicle->gus_number_vehicle})"}}
 
                                         </option>
                                     @endforeach

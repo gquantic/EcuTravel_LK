@@ -42,9 +42,14 @@
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label">Транспорт</label>
                                             <select  name="vehicle_type" class="form-control credit-card-mask">
-                                                <option value="passenger" @if($tour->vehicle_type == 'passenger') selected @endif>Легковой транспорт</option>
-                                                <option value="bus" @if($tour->vehicle_type == 'bus') selected @endif>Автобус</option>
-                                                <option value="minibus" @if($tour->vehicle_type == 'minibus') selected @endif>Микроавтобус</option>
+                                                @foreach($vehicles as $vehicle)
+                                                    <option value="{{ $vehicle->id}}">
+                                                        {{$vehicle->model_vehicle}}
+
+                                                        {{"({$vehicle->gus_number_vehicle})"}}
+
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
 

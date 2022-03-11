@@ -85,15 +85,16 @@
                                             <input type="text" class="form-control" name="bag_price" value="{{$route->bag_price}}">
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Примечания</label>
-                                            <textarea type="text" class="form-control" name="note_routes" rows="1" placeholder="{{$route->note_routes}}"></textarea>
-                                        </div>
-                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Состояние</label>
                                             <select name="condition_routes" id="basicSelect" class="form-control">
                                                 <option value="1" @if($route -> condition_routes == 1) selected @endif>Активно</option>
                                                 <option value="0" @if($route -> condition_routes == 0) selected @endif>Не активно</option>
                                             </select>
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form-label" for="credit-card">Примечания</label>
+                                            <textarea type="text" class="form-control" name="note_routes" rows="1" placeholder="{{$route->note_routes}}"></textarea>
                                         </div>
 
                                     </div>

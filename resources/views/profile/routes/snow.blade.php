@@ -95,6 +95,7 @@
                                         <label class="form-label" for="credit-card">Примечания</label>
                                         <textarea type="text"  class="form-control" placeholder="{{$route->note_routes}}"></textarea>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

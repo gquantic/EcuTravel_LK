@@ -61,18 +61,19 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label for="">Примечания</label>
-{{--                                            <h4 class="mt-1">{{$vehicle->note_vehicle}}</h4>--}}
-                                            <textarea class="form-control mt-1" disabled name="note_vehicle" id="exampleFormControlTextarea1" rows="1" placeholder="{{$vehicle->note_vehicle}}"></textarea>
-                                        </div>
-
-                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form" for="">Состояние</label>
                                             <select disabled name="condition_vehicle" id="" class="form-control credit-card-mask mt-1">
                                                 <option value="1" @if($vehicle ->condition_vehicle == 1) selected @endif>Активно </option>
                                                 <option value="0" @if($vehicle ->condition_vehicle == 0) selected @endif>Не активно </option>
                                             </select>
                                         </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label for="">Примечания</label>
+                                            {{--                                            <h4 class="mt-1">{{$vehicle->note_vehicle}}</h4>--}}
+                                            <textarea class="form-control mt-1"  name="note_vehicle" id="exampleFormControlTextarea1" rows="1" placeholder="{{$vehicle->note_vehicle}}"></textarea>
+                                        </div>
+
                                     </div>
                                 </div>
                             </form>

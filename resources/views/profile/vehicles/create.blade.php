@@ -47,7 +47,7 @@
 
                             <div class="form-group mb-1" id="gosNumber">
                                 <label for="">Регистрационный номер</label>
-                                <input type="number" value="{{old('gus_number_vehicle')}}" name="gus_number_vehicle" class="form-control mt-1 @error('gus_number_vehicle') is-invalid @enderror">
+                                <input type="text" value="{{old('gus_number_vehicle')}}" name="gus_number_vehicle" class="form-control mt-1 @error('gus_number_vehicle') is-invalid @enderror">
 
                                 @error('gus_number_vehicle')
                                 <span class="invalid-feedback" role="alert">

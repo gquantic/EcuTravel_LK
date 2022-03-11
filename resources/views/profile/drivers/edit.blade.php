@@ -61,18 +61,20 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form-label" for="credit-card">Примечание</label>
-                                            <textarea type="text" class="form-control credit-card-mask" placeholder="{{$driver->note_drivers}}" name="note_drivers" rows="1"></textarea>
-                                        </div>
-
-                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form-label" for="credit-card">Состояние</label>
                                             <select name="condition_driver" id="basicSelect" class="form-control">
                                                 <option value="1" @if($driver -> condition_driver == 1) selected @endif>Активно</option>
                                                 <option value="0" @if($driver -> condition_driver == 0) selected @endif>Не активно</option>
                                             </select>
                                         </div>
+
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form-label" for="credit-card">Примечание</label>
+                                            <textarea type="text" class="form-control credit-card-mask" placeholder="{{$driver->note_drivers}}" name="note_drivers" rows="1"></textarea>
+                                        </div>
                                     </div>
+
 
                                     <div class="col-4">
                                         <button type="submit" class="btn btn-primary">Сохранить изменения</button>

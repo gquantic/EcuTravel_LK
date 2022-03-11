@@ -101,10 +101,10 @@
                                             @endswitch
                                         </td>
                                         <td>
-                                            {{ $route->depart_station }}
+                                            {{ $route->departure_address }} ({{$route->depart_station}})
                                         </td>
                                         <td>
-                                            {{ $route->arrival_station }}
+                                            {{ $route->arrival_address }} ({{$route->arrival_station}})
                                         </td>
                                         <td>
                                             {{ $route->arrival_address }}

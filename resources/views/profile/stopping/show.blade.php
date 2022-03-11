@@ -49,10 +49,7 @@
                                         <label class="form-label" for="credit-card">Адрес</label>
                                         <input type="text" disabled class="form-control credit-card-mask" value="{{$stopping->address}}">
                                     </div>
-                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                        <label class="form-label" for="credit-card">Примечания </label>
-                                        <input type="text" disabled class="form-control credit-card-mask" value="{{ $stopping->note_stopping }}">
-                                    </div>
+
 
                                     <div class="col-xl-4 col-md-6 col-sm-12 mb-2" data-select2-id="45">
                                         <label class="form-label"  for="basicSelect">Состояние</label>
@@ -60,6 +57,11 @@
                                             <option value="1" @if($stopping->сondition_stopping == '1') selected @endif>Активно</option>
                                             <option value="0" @if($stopping->сondition_stopping == '0') selected @endif>Не активно</option>
                                         </select>
+                                    </div>
+
+                                    <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                        <label class="form-label" for="credit-card">Примечания </label>
+                                        <textarea type="text" class="form-control credit-card-mask" placeholder="{{ $stopping->note_stopping }}"></textarea>
                                     </div>
                                 </div>
                             </div>

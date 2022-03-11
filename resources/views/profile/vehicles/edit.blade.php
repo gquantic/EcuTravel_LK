@@ -70,16 +70,16 @@
                                         </div>
 
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label class="form">Примечания</label>
-                                            <textarea class="form-control credit-card-mask mt-1" name="note_drivers" id="exampleFormControlTextarea1" placeholder="{{$vehicle->note_vehicle}}" rows="1"></textarea>
-                                        </div>
-
-                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
                                             <label class="form">Тип транспортного средства</label>
                                             <select name="condition_vehicle" class="form-control credit-card-mask mt-1">
                                                 <option value="1" @if($vehicle->condition_vehicle == '1') selected @endif>Активно</option>
                                                 <option value="0" @if($vehicle->condition_vehicle == '0') selected @endif>Не активно</option>
                                             </select>
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label class="form">Примечания</label>
+                                            <textarea class="form-control credit-card-mask mt-1" name="note_drivers" id="exampleFormControlTextarea1" placeholder="{{$vehicle->note_vehicle}}" rows="1"></textarea>
                                         </div>
                                     </div>
 

@@ -41,10 +41,10 @@
                                         Дата отправления
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Client: activate to sort column ascending">
-                                        Адрес отправления
+                                        Отправление
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Total: activate to sort column ascending">
-                                        Адрес прибытия
+                                        Прибытие
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Total: activate to sort column ascending">
                                         Время отправления
@@ -79,11 +79,11 @@
                                         </td>
 
                                         <td>
-                                            {{$tour->route_depart_station}}
+                                            {{$tour->route_depart_station}} ({{$tour->route_departure_address}})
                                         </td>
 
                                         <td>
-                                            {{$tour->route_arrival_station}}
+                                            {{$tour->route_arrival_station}} ({{$tour->route_arrival_address}})
                                         </td>
 
                                         <td>

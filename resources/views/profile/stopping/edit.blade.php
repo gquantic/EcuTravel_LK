@@ -52,18 +52,18 @@
                                             <label for="">Адрес</label>
                                             <input type="text" name="address" class="form-control mt-1" value="{{$stopping->address}}">
                                         </div>
-
-                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
-                                            <label for="">Примечания</label>
-                                            <textarea class="form-control mt-1" name="note_stopping" id="exampleFormControlTextarea1" placeholder="{{$stopping->note_stopping}}"></textarea>
-                                        </div>
-
+                                        
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2" data-select2-id="45">
                                             <label class="form-label" for="basicSelect">Состояние</label>
                                             <select  name="condition_stopping" id="basicSelect" class="form-select mt-1">
                                                 <option value="1" @if($stopping->сondition_stopping == '1') selected @endif>Активно</option>
                                                 <option value="0" @if($stopping->сondition_stopping == '0') selected @endif>Не активно</option>
                                             </select>
+                                        </div>
+
+                                        <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                                            <label for="">Примечания</label>
+                                            <textarea class="form-control mt-1" name="note_stopping" id="exampleFormControlTextarea1" placeholder="{{$stopping->note_stopping}}"></textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Сохранить изменения</button>

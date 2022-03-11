@@ -19,7 +19,12 @@ class Tour extends Model
         'route_depart_station',
         'route_arrival_station',
 
+        'route_departure_address',
+        'route_arrival_address',
+
         'vehicle_type',
+        'vehicle_model_vehicle',
+        'vehicle_gus_number_vehicle',
 
         'depart_time',
         'arrival_time',
