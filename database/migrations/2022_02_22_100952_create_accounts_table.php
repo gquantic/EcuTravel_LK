@@ -18,6 +18,7 @@ class CreateAccountsTable extends Migration
             $table->timestamps();
             $table->string('logo')->nullable();
             $table->string('brand')->nullable();
+            $table->string('carrier_registration_number')->nullable();
         });
     }
 

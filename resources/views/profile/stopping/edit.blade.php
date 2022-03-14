@@ -52,7 +52,7 @@
                                             <label for="">Адрес</label>
                                             <input type="text" name="address" class="form-control mt-1" value="{{$stopping->address}}">
                                         </div>
-                                        
+
                                         <div class="col-xl-4 col-md-6 col-sm-12 mb-2" data-select2-id="45">
                                             <label class="form-label" for="basicSelect">Состояние</label>
                                             <select  name="condition_stopping" id="basicSelect" class="form-select mt-1">

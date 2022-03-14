@@ -30,6 +30,7 @@ class RouteController extends Controller
             'stoppings'=>Stopping::all(),
 //            'routes' => Db::table('routes')->paginate(15)
         ]);
+
     }
 
     /**

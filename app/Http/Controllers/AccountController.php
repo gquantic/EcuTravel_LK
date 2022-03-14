@@ -48,6 +48,7 @@ class AccountController extends Controller
        $account = new Account([
            'logo'=> $request->file('logo'),
            'brand'=> $request->get('brand'),
+           'carrier_registration_number'=> $request->get('carrier_registration_number'),
        ]);
 
         if ($request->hasFile('logo'))  {

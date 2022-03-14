@@ -11,6 +11,7 @@ class Account extends Model
 
     protected $fillable = [
         'logo',
-        'brand'
+        'brand',
+        'carrier_registration_number'
     ];
 }

@@ -66,7 +66,7 @@
                                         <input type="tel" class="form-control account-number-mask" id="accountPhoneNumber" name="phoneNumber"  value="">
                                     </div>
                                     <div class="col-12 col-sm-6 mb-1">
-                                        <label class="form-label" for="accountEmail">Фирменное наименование</label>
+                                        <label class="form-label" for="accountEmail">Регистрационный номер перевозчика</label>
                                         <input type="text" class="form-control" id="accountEmail" name="brand" placeholder="Бренд">
                                     </div>
                                     <div class="col-12 col-sm-6 mb-1">
@@ -123,6 +123,13 @@
                                         <label class="form-label" for="accountZipCode">Наименование банка</label>
                                         <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="50">
                                     </div>
+
+                                    <div class="col-12 col-sm-6 mb-1">
+                                        <label class="form-label" for="accountZipCode">Фирменное наименование</label>
+                                        <input type="text" class="form-control account-zip-code" id="accountZipCode" name="zipCode"  maxlength="50">
+                                    </div>
+
+
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-1 me-1 waves-effect waves-float waves-light">Создать</button>
                             </div>
