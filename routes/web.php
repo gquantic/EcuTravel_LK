@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/home', '/dashboard/');
+Route::redirect('/', '/home');
 
 /**
  * Routes for dashboard pages
@@ -57,3 +57,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
