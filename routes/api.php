@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Resources\ToursController;
+use App\Http\Resources\ToursResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\Api\ToursController;
@@ -32,8 +32,8 @@ Route::prefix('guide')->group(function () {
         return json_encode($routes, JSON_UNESCAPED_UNICODE);
     });
 
-    Route::get('tours', function (Request $request) {
-        $toursController = new ToursController();
-        $toursController->searchWithRoute($request->from, $request->to);
-    });
 });
+
+Route::apiResources([
+    'tours'=>\App\Http\Controllers\Api\ToursController::class
+]);
