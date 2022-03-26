@@ -20,6 +20,8 @@ class Route extends Model
         'basic_price',
         'child_price',
         'bag_price',
-        'note_routes'
+        'note_routes',
+
+        'condition_routes'
     ];
 }

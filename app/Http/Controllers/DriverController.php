@@ -15,6 +15,12 @@ class DriverController extends Controller
     {
         $this->pageData = [
             'header' => true,
+            'user_id',
+            'name',
+            'passport_number',
+            'position',
+            'note_drivers',
+            'condition_driver',
         ];
     }
 
@@ -25,9 +31,11 @@ class DriverController extends Controller
      */
     public function index()
     {
+//        dd(Driver::where('user_id', \Auth::id()));
+
         return view('profile.drivers.index', [
             'pageData' => $this->pageData,
-            'drivers' => Driver::all(),
+            'drivers' => Driver::where('user_id', \Auth::id())->get(),
         ]);
 
     }
@@ -50,12 +58,19 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=> 'required',
+            'passport'=> 'required',
+            'position'=> 'required',
+        ]);
+
         Driver::create([
             'user_id' => \Auth::id(),
             'name' => $request->name,
             'passport_number' => $request->passport,
             'position' => $request->position,
-            'note_drivers'=>$request->note_drivers
+            'note_drivers'=> $request->note_drivers,
+            'condition_driver'=> $request->condition_driver
         ]);
 
         return redirect()->route('drivers.index')->with('success', 'Перевозчик успешно добавлен!');
@@ -92,11 +107,11 @@ class DriverController extends Controller
      */
     public function update(Request $request, Driver $driver)
     {
-        $request->validate([
-            'name' => 'required',
-            'passport_number' =>'required',
-            'position' => 'required',
-        ]);
+//        $request->validate([
+//            'name' => 'required',
+//            'passport_number' =>'required',
+//            'position' => 'required',
+//        ]);
 
         $driver->update($request->all());
 

@@ -354,9 +354,9 @@ $(window).on('load', function () {
       dashArray: [0, 12],
       width: [4, 3]
     },
-    grid: {
-      borderColor: $labelColor
-    },
+    // grid: {
+    //   borderColor: $labelColor
+    // },
     legend: {
       show: false
     },

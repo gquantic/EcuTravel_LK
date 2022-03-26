@@ -29,10 +29,12 @@ class CreateRoutesTable extends Migration
             $table->string('arrival_address');
 
             $table->string('note_routes')->nullable();
+            $table->string('condition_routes');
 
 
-                        /** ^_^ **/
-                        /** БАГАЖ **/
+
+                     /** ^_^ **/
+                    /** БАГАЖ **/
             $table->integer('basic_price');
             $table->integer('child_price');
             $table->integer('bag_price');
@@ -48,6 +50,6 @@ class CreateRoutesTable extends Migration
      */
     public function down()
     {
-//        Schema::dropIfExists('routes');
+        Schema::dropIfExists('routes');
     }
 }

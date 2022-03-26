@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Stopping;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -21,39 +22,53 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('profile.account.index',['pageData' => $this->pageData,]);
+        return view('profile.account.index',[
+            'pageData' => $this->pageData,
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('profile.account.create',['pageData' => $this->pageData]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+       $account = new Account([
+           'logo'=> $request->file('logo'),
+           'brand'=> $request->get('brand'),
+           'carrier_registration_number'=> $request->get('carrier_registration_number'),
+       ]);
+
+        if ($request->hasFile('logo'))  {
+            $account->logo = $request->file('logo')->store('logo', 'public');
+        }
+
+
+        $account->save();
+        return redirect('')->route('account.index');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Account  $account
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Account $account)
     {
-        //
+        return view('profile.account.show', compact('account'), ['pageData' => $this->pageData,]);
     }
 
     /**

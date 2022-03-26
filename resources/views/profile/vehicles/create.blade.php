@@ -19,40 +19,52 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="card">
-                    @if($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{$error}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="card-body">
                         <form action="{{ route('vehicle.store') }}" method="POST">
                             @csrf
                             @method('POST')
 
                             <div class="form-group mb-1">
-                                <label for="">Тип транспортного средства</label>
-                                <select class="form-control mt-1" name="type_ts" id="objectType">
+                                <label for="basicSelect">Тип транспортного средства</label>
+                                <select class="form-control mt-1" id="basicSelect" name="type_ts" >
                                     <option value="bus">Автобус</option>
                                     <option value="passenger">Легковой транспорт</option>
                                     <option value="minibus">Микроавтобус</option>
-                                    <option value="">Черная посаженная приора(оперская)</option>
-                                    <option value="">Дядя Мага с пятого поселка на убитой шестерке</option>
                                 </select>
+
                             </div>
 
                             <div class="form-group mb-1" id="gosNumber">
                                 <label for="">Модель</label>
-                                <input type="text" name="model_vehicle" class="form-control mt-1">
-                            </div>
+                                <input type="text" value="{{old('model_vehicle')}}" name="model_vehicle" class="form-control mt-1 @error('model_vehicle') is-invalid @enderror">
 
+                                @error('model_vehicle')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
 
                             <div class="form-group mb-1" id="gosNumber">
                                 <label for="">Регистрационный номер</label>
-                                <input type="text" name="gus_number_vehicle" class="form-control mt-1">
+                                <input type="text" value="{{old('gus_number_vehicle')}}" name="gus_number_vehicle" class="form-control mt-1 @error('gus_number_vehicle') is-invalid @enderror">
+
+                                @error('gus_number_vehicle')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group mb-1" id="gosNumber">
+                                <label for="">Количество посадочных мест</label>
+                                <input type="number" value="{{old('number_of_seats')}}" name="number_of_seats" class="form-control mt-1 @error('number_of_seats') is-invalid @enderror">
+
+                                @error('number_of_seats')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">
@@ -60,14 +72,13 @@
                                 <textarea class="form-control mt-1" name="note_vehicle" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
-                            <div class="form-group mb-1">
-                                <label for="">Состояние</label>
-                                <select name="" id="" class="form-control mt-1">
-                                    <option value="">Активно </option>
-                                    <option value="">Не активно </option>
+                            <div class="form-group mb-1" data-select2-id="45">
+                                <label class="form-label" for="basicSelect">Состояние</label>
+                                <select name="condition_vehicle" id="basicSelect" class="form-select mt-1">
+                                    <option value="1">Активно</option>
+                                    <option value="0">Не активно</option>
                                 </select>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Создать</button>
                         </form>
                     </div>

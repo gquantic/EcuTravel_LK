@@ -16,6 +16,9 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('logo')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('carrier_registration_number')->nullable();
         });
     }
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Driver;
 use App\Models\Route;
+use App\Models\Stopping;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RouteController extends Controller
 {
@@ -24,8 +26,11 @@ class RouteController extends Controller
     {
         return view('profile.routes.index', [
             'pageData' => $this->pageData,
-            'routes' => Route::all()
+            'routes' => Route::all(),
+            'stoppings'=>Stopping::all(),
+//            'routes' => Db::table('routes')->paginate(15)
         ]);
+
     }
 
     /**
@@ -38,6 +43,7 @@ class RouteController extends Controller
         return view('profile.routes.create', [
             'pageData' => $this->pageData,
             'drivers' => Driver::all(),
+            'stoppings'=> Stopping::all(),
         ]);
     }
 
@@ -72,8 +78,9 @@ class RouteController extends Controller
             'child_price' => $request->child_price,
             'bag_price' => $request->bag_price,
             'note_routes' => $request->note_routes,
+            'condition_routes'=>$request->condition_routes
         ]);
-
+//        dd($request);
         return redirect()->route('routes.index');
     }
 
@@ -81,22 +88,22 @@ class RouteController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Route  $route
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Route $route)
     {
-        //
+        return view('profile.routes.snow', compact('route'), ['pageData' => $this->pageData]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Route  $route
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Route $route)
     {
-        //
+        return view('profile.routes.edit', compact('route'), ['pageData' => $this->pageData]);
     }
 
     /**
@@ -104,21 +111,23 @@ class RouteController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Route  $route
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Route $route)
     {
-        //
+        $route->update($request->all());
+        return redirect()->route('routes.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Route  $route
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Route $route)
     {
-        //
+        $route->delete();
+        return redirect()->route('routes.index');
     }
 }

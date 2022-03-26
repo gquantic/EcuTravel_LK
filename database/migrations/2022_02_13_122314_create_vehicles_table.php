@@ -24,6 +24,11 @@ class CreateVehiclesTable extends Migration
             $table->string('gus_number_vehicle');
             $table->string('note_vehicle')->nullable();
 
+            $table->string('condition_vehicle');
+
+            $table->string('number_of_seats')->nullable();
+
+
             $table->timestamps();
         });
     }

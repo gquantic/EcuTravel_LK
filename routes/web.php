@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/dashboard/');
+Route::redirect('/', '/home');
 
 /**
  * Routes for dashboard pages
@@ -28,15 +29,17 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         ],
     ];
 
-    Route::get('/', function () use ($pageData) {
+    Route::get('/home', function () use ($pageData) {
         return view('profile.dashboard', [
             'pageData' => $pageData,
 //            'tours' => \App\Models\Tour::all(),
         ]);
     });
 
-    /** PROFILE **/
-//    Route::get('/profile');
+                    /** ФИНАНСЫ **/
+    Route::get('finance/soon', function () use ($pageData) {
+        return view('profile.finance.soon', compact('pageData'));
+    })->name('soon');
 
     Route::get('/reference', function () use ($pageData) {
         return view('profile.reference', compact('pageData'));
@@ -49,11 +52,12 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         'vehicle'=> \App\Http\Controllers\VehicleController::class,
         'tours'=> \App\Http\Controllers\TourController::class,
         'account'=>\App\Http\Controllers\AccountController::class,
+        'stopping'=>\App\Http\Controllers\StoppingController::class,
     ]);
 });
+
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::redirect('home', '/dashboard/');

@@ -24,6 +24,8 @@ class CreateDriversTable extends Migration
             $table->string('position')->default('driver');
             $table->string('note_drivers')->nullable();
 
+            $table->string('condition_driver');
+
 
             $table->timestamps();
         });
@@ -36,6 +38,6 @@ class CreateDriversTable extends Migration
      */
     public function down()
     {
-//        Schema::dropIfExists('drivers');
+        Schema::dropIfExists('drivers');
     }
 }

@@ -113,10 +113,10 @@
 
                         <button class="btn btn-primary w-100" tabindex="4" type="submit">Регистрация</button>
                     </form>
-                    <p class="text-center mt-2"><span>Уже зарегистрированы?</span><a href="/service/authorization"><span>&nbsp;Войдите</span></a></p>
-                    <div class="divider my-2">
-                        <div class="divider-text">или</div>
-                    </div>
+                    <p class="text-center mt-2"><span>Уже зарегистрированы?</span><a href="{{route('login')}}"><span>&nbsp;Войдите</span></a></p>
+{{--                    <div class="divider my-2">--}}
+{{--                        <div class="divider-text">или</div>--}}
+{{--                    </div>--}}
                     <div class="auth-footer-btn d-flex justify-content-center">
                         <a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a>
                         <a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a>
