@@ -24,7 +24,7 @@ class ToursResource extends JsonResource
             'route_arrival_address' => $this->route_arrival_address,
 
             'vehicle' => $this->vehicle,
-            'vehicle_type ' => $this->vehicle_type,
+            'vehicle_type' => $this->vehicle_type,
             'vehicle_model_vehicle' => $this->vehicle_model_vehicle,
             'vehicle_gus_number_vehicle' => $this->vehicle_gus_number_vehicle,
 

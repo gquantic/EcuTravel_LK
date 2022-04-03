@@ -35,5 +35,6 @@ Route::prefix('guide')->group(function () {
 });
 
 Route::apiResources([
-    'tours'=>\App\Http\Controllers\Api\ToursController::class
+    'tours'=>\App\Http\Controllers\Api\ToursController::class,
+    'routes'=>\App\Http\Controllers\Api\RoutesController::class
 ]);
