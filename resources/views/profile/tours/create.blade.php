@@ -58,12 +58,39 @@
                             </div>
 
                             <div class="form-group mb-1">
+                                <label for="">Время в пути</label>
+                                <input type="time" name="travel_time_driver" id="datetimepicker" class="form-control mt-1 @error('travel_time_driver') is-invalid @enderror">
+
+                                @error('travel_time_driver')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group mb-1">
                                 <label for="">Маршрут</label>
-                                <select name="route" id="" class="form-control mt-1 ">
+                                <select name="route" id="" class="form-control mt-1">
                                     @foreach($routes as $route)
                                         <option value="{{$route->id}}">{{ $route->number_routes. ' - ' . $route->depart_station . ' - ' . $route->arrival_station }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Город отбытия</label>
+                                <input placeholder="{{old('departure_city')}}" name="departure_city" id="exampleFormControlTextarea1" class="form-control mt-1 @error('departure_city') is-invalid @enderror">
+                            </div>
+
+                            <div class="form-group mb-1">
+                                <label for="">Город прибытия</label>
+                                <input placeholder="{{old('city_of_arrival')}}" name="city_of_arrival" id="exampleFormControlTextarea1" class="form-control mt-1 @error('city_of_arrival') is-invalid @enderror" >
+
+                                @error('city_of_arrival')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group mb-1">

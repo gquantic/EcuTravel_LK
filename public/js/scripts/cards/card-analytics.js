@@ -572,7 +572,7 @@ $(window).on('load', function () {
       axisTicks: {
         show: false
       },
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      categories: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
       axisBorder: {
         show: false
       },
@@ -596,7 +596,7 @@ $(window).on('load', function () {
     series: [
       {
         name: 'Sales',
-        data: [140, 180, 150, 205, 160, 295, 125, 255, 205, 305, 240, 295]
+        data: [240, 580, 50, 405, 160, 295, 125, 255, 205, 305, 240, 295]
       }
     ]
   };

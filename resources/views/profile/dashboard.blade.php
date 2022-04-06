@@ -68,13 +68,13 @@
                         <div class="d-inline-block me-1">
                             <div class="d-flex align-items-center">
                                 <i data-feather="circle" class="font-small-3 text-primary me-50"></i>
-                                <h6 class="mb-0">Sales</h6>
+                                <h6 class="mb-0">Продаж</h6>
                             </div>
                         </div>
                         <div class="d-inline-block">
                             <div class="d-flex align-items-center">
                                 <i data-feather="circle" class="font-small-3 text-info me-50"></i>
-                                <h6 class="mb-0">Visits</h6>
+                                <h6 class="mb-0">Визитов</h6>
                             </div>
                         </div>
                         <div id="sales-visit-chart"></div>

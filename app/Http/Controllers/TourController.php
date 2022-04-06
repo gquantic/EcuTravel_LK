@@ -74,6 +74,9 @@ class TourController extends Controller
             'arrival_time' => 'required',
             'departure_date' => 'required',
             'arrival_date' => 'required',
+            'travel_time_driver' => 'required',
+            'departure_city' => 'required',
+            'city_of_arrival' => 'required',
         ]);
 
 
@@ -84,12 +87,21 @@ class TourController extends Controller
             'user' => \Auth::id(),
             'driver' => $request->get('driver'),
             'driver_2' => $request->get('driver_2'),
+
+            'travel_time_driver' => $request->get('travel_time_driver'),
+            'departure_city' => $request->get('departure_city'),
+            'city_of_arrival' => $request->get('city_of_arrival'),
+
             'route' => $request->get('route'),
             'vehicle' => $request->get('vehicle'),
 
             'route_number' => $routeNumber->number_routes,
             'route_depart_station' => $routeNumber->depart_station,
             'route_arrival_station' => $routeNumber->arrival_station,
+
+            'route_basic_price' => $routeNumber->basic_price,
+            'route_child_price' => $routeNumber->child_price,
+            'route_bag_price' => $routeNumber->bag_price,
 
             'route_departure_address' => $routeNumber->departure_address,
             'route_arrival_address' => $routeNumber->arrival_address,

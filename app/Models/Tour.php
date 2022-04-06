@@ -12,8 +12,13 @@ class Tour extends Model
     protected $fillable = [
         'driver',
         'driver_2',
+        'travel_time_driver',
+
         'route',
         'vehicle',
+
+        'city_of_arrival',
+        'departure_city',
 
         'route_number',
         'route_depart_station',
@@ -21,6 +26,10 @@ class Tour extends Model
 
         'route_departure_address',
         'route_arrival_address',
+
+        'route_basic_price',
+        'route_child_price',
+        'route_bag_price',
 
         'vehicle_type',
         'vehicle_model_vehicle',

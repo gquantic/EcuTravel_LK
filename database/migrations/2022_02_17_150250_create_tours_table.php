@@ -29,18 +29,27 @@ class CreateToursTable extends Migration
             $table->string('route_departure_address')->nullable();
             $table->string('route_arrival_address')->nullable();
 
+
+            $table->string('route_basic_price')->nullable();
+            $table->string('route_child_price')->nullable();
+            $table->string('route_bag_price')->nullable();
+
+
             $table->string('vehicle_type')->nullable();
             $table->string('vehicle_model_vehicle')->nullable();
             $table->string('vehicle_gus_number_vehicle')->nullable();
 
+            $table->string('departure_city');
+            $table->string('city_of_arrival');
 
             $table->string('driver');
             $table->string('driver_2')->nullable();
+            $table->string('travel_time_driver');
 
-            $table->time('depart_time')->nullable();
-            $table->time('arrival_time')->nullable();
-            $table->timestamp('departure_date')->nullable();
-            $table->timestamp('arrival_date')->nullable();
+            $table->string('depart_time')->nullable();
+            $table->string('arrival_time')->nullable();
+            $table->string('departure_date')->nullable();
+            $table->string('arrival_date')->nullable();
 
             $table->string('note_tours')->nullable();
 
