@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ToursResource;
+use App\Http\Resources\RoutesResource;
+use App\Models\Route;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 
-class ToursController extends Controller
+class RoutesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class ToursController extends Controller
      */
     public function index()
     {
-        return ToursResource::collection(Tour::all());
+        return RoutesResource::collection(Route::all());
     }
 
     /**
@@ -44,11 +45,11 @@ class ToursController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return ToursResource
+     * @return RoutesResource
      */
     public function show($id)
     {
-        return new ToursResource(Tour::find($id));
+        return new RoutesResource(Route::find($id));
     }
 
     /**
